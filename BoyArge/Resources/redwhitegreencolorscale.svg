@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" id="Red_White_Green_Color_Scale" style="enable-background:new 0 0 32 32">
+  <style type="text/css">
+	.Red{fill:#D11C1C;}
+	.Green{fill:#039C23;}
+	.White{fill:#FFFFFF;}
+	.st0{opacity:0.5;}
+</style>
+  <rect x="0" y="0" width="30" height="6" rx="0" ry="0" class="Red" />
+  <path d="M30,14H0V8h30V14z M30,16H0v6h30V16z" class="White" />
+  <g class="st0">
+    <rect x="0" y="16" width="30" height="6" rx="0" ry="0" class="Green" />
+  </g>
+  <g class="st0">
+    <rect x="0" y="8" width="30" height="6" rx="0" ry="0" class="Red" />
+  </g>
+  <rect x="0" y="24" width="30" height="6" rx="0" ry="0" class="Green" />
+</svg>

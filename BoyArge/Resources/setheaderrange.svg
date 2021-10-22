@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" id="Set_Header_Range" style="enable-background:new 0 0 32 32">
+  <style type="text/css">
+	.Black{fill:#727272;}
+	.Yellow{fill:#FFB115;}
+	.st0{opacity:0.5;}
+</style>
+  <g class="st0">
+    <path d="M2,14V8h8v6H2z M12,8v6h8V8H12z M22,14h8V8h-8V14z M22,22h8v-6h-8V22z M10,22v-6H2v6H10z M12,16v6h8v-6H12z    M22,30h8v-6h-8V30z M10,30v-6H2v6H10z M12,24v6h8v-6H12z" class="Black" />
+  </g>
+  <path d="M10,6H2V0h8V6z M20,0h-8v6h8V0z M30,0h-8v6h8V0z" class="Yellow" />
+</svg>

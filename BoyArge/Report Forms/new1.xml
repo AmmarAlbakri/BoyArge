@@ -1,0 +1,270 @@
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Kontrol paneli" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="dbArgeConnectionString" FromAppConfig="true" />
+      <Query Type="StoredProcQuery" Name="spProductUnitCost">
+        <Parameter Name="@MainStockCode" Type="DevExpress.DataAccess.Expression">(System.String)(?MainStockCode)</Parameter>
+        <Parameter Name="@StockFeatureTypeID" Type="DevExpress.DataAccess.Expression">(System.Int32)(?StockFeatureType)</Parameter>
+        <Parameter Name="@OrderAmount" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?OrderAmount)</Parameter>
+        <Parameter Name="@RingBobinNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?RingNo)</Parameter>
+        <Parameter Name="@BukumNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?BukumNo)</Parameter>
+        <Parameter Name="@FinalNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?FinalNo)</Parameter>
+        <Parameter Name="@Date" Type="DevExpress.DataAccess.Expression">(System.DateTime)(?Date)</Parameter>
+        <Parameter Name="@CapacityType" Type="DevExpress.DataAccess.Expression">(System.Int32)(?CapacityType)</Parameter>
+        <Parameter Name="@PaymentDate" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?PaymentDate)</Parameter>
+        <Parameter Name="@PackageType" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?PackageType)</Parameter>
+        <Parameter Name="@OrderType" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?OrderType)</Parameter>
+        <Parameter Name="@DeliveryType" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?DeliveryType)</Parameter>
+        <Parameter Name="@CalculateType" Type="DevExpress.DataAccess.Expression">(System.Boolean)(?CalculateType)</Parameter>
+		<Parameter Name="@ProductTreeFicheID" Type="DevExpress.DataAccess.Expression">(System.Int32)(?ProductTreeFicheID)</Parameter>
+        <ProcName>spProductUnitCost</ProcName>
+      </Query>
+      <Query Type="SelectQuery" Name="vwExchangeRateConverter">
+        <Tables>
+          <Table Name="vwExchangeRateConverter" X="30" Y="30" Width="125" Height="222" />
+        </Tables>
+        <Columns>
+          <Column Table="vwExchangeRateConverter" Name="USD" />
+          <Column Table="vwExchangeRateConverter" Name="EUR" />
+          <Column Table="vwExchangeRateConverter" Name="GBP" />
+          <Column Table="vwExchangeRateConverter" Name="TLtoUSD" />
+          <Column Table="vwExchangeRateConverter" Name="USDtoTL" />
+          <Column Table="vwExchangeRateConverter" Name="USDtoEUR" />
+          <Column Table="vwExchangeRateConverter" Name="USDtoGBP" />
+          <Column Table="vwExchangeRateConverter" Name="DATE" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="vwExchangeRateConverter">
+            <Field Name="USD" Type="Double" />
+            <Field Name="EUR" Type="Double" />
+            <Field Name="GBP" Type="Double" />
+            <Field Name="TLtoUSD" Type="Double" />
+            <Field Name="USDtoTL" Type="Double" />
+            <Field Name="USDtoEUR" Type="Double" />
+            <Field Name="USDtoGBP" Type="Double" />
+            <Field Name="DATE" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Today" Expression="Today()" DataType="Auto" DataMember="VW_STOCK" />
+        <CalculatedField Name="Hesaplanan alan 1" Expression="[TotalIndirectExpenses]/[ProcessCount]/[MonthlyProductBottleNeck]" DataType="Auto" DataMember="spProcessUnitCost" />
+        <CalculatedField Name="Kapasite_Yüzde" Expression="[DailyProductBottleNeck]*[FinalAmount]/100 / ([FullCapacity])" DataType="Auto" DataMember="spProcessUnitCost" />
+        <CalculatedField Name="Hesaplanan alan 2" Expression="[ColumnName]='PaymentDate'" DataType="Auto" DataMember="tblParameter_PaymentDate" />
+        <CalculatedField Name="Uretim_Iscilik" Expression="[ZoneExpenses]+[DirectExpenses]" DataType="Auto" DataMember="spProcessUnitCost" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <TabContainer ComponentName="tabContainerDashboardItem1" Name="Tab Container 1">
+      <Pages>
+        <Page ComponentName="dashboardTabPage4" Name="Ürün Maliyeti" ShowItemAsTabPage="false" />
+      </Pages>
+    </TabContainer>
+    <Card ComponentName="cardDashboardItem9" Name="Kartlar 2" ShowCaption="false" ParentContainer="dashboardTabPage4" DataSource="dashboardSqlDataSource1" DataMember="vwExchangeRateConverter">
+      <DataItems>
+        <Measure DataMember="EUR" DefaultId="DataItem0" />
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="Green" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="Green" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card Name="EUR">
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem11" Name="Kartlar 2" ShowCaption="false" ParentContainer="dashboardTabPage4" DataSource="dashboardSqlDataSource1" DataMember="vwExchangeRateConverter">
+      <DataItems>
+        <Measure DataMember="USD" DefaultId="DataItem0" />
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="Green" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="Green" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card Name="USD">
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem12" Name="Kartlar 2" ShowCaption="false" ParentContainer="dashboardTabPage4" DataSource="dashboardSqlDataSource1" DataMember="spProductUnitCost">
+      <DataItems>
+        <Measure DataMember="UnitCost" Name="Birim Maliyet" DefaultId="DataItem0" />
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleGreen" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="PaleGreen" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem13" Name="Kartlar 2" ShowCaption="false" ParentContainer="dashboardTabPage4" DataSource="dashboardSqlDataSource1" DataMember="vwExchangeRateConverter">
+      <DataItems>
+        <Measure DataMember="GBP" DefaultId="DataItem0" />
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="Green" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="Green" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card Name="GBP">
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem14" Name="Kartlar 2" ShowCaption="false" ParentContainer="dashboardTabPage4" DataSource="dashboardSqlDataSource1" DataMember="spProductUnitCost">
+      <DataItems>
+        <Measure DataMember="MonthlyProductBottleNeck" Name="Aylık Kapasite" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleYellow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="PaleYellow" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutTabContainer DashboardItem="tabContainerDashboardItem1" Weight="100">
+        <LayoutTabPage DashboardItem="dashboardTabPage4" Weight="100">
+          <LayoutItem DashboardItem="cardDashboardItem12" Weight="17.484008528784649" />
+          <LayoutItem DashboardItem="cardDashboardItem14" Weight="18.550106609808104" />
+          <LayoutItem DashboardItem="cardDashboardItem11" Weight="19.722814498933904" />
+          <LayoutItem DashboardItem="cardDashboardItem9" Weight="22.707889125799575" />
+          <LayoutItem DashboardItem="cardDashboardItem13" Weight="21.535181236673775" />
+        </LayoutTabPage>
+      </LayoutTabContainer>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="tr-TR">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="dsCPM" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="localhost_PLCKAYITLARI_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="CPM" />
+          <Parameter Name="database" Value="TEKSTIL_UYG" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="arge" />
+          <Parameter Name="password" Value="Arge*2020!" />
+        </Parameters>
+      </Connection>
+      <Query Type="StoredProcQuery" Name="SPARGE_PROSESANALIZ">
+        <Parameter Name="@Tarih" Type="DevExpress.DataAccess.Expression">(System.DateTime)(?pTarih)</Parameter>
+        <Parameter Name="@ProsesDurum" Type="DevExpress.DataAccess.Expression">(System.Int32)(?pProsesDurum)</Parameter>
+        <Parameter Name="@IsletmeKod" Type="DevExpress.DataAccess.Expression">(System.Int32)(?pIsletmeKod)</Parameter>
+        <ProcName>SPARGE_PROSESANALIZ</ProcName>
+      </Query>
+      <Query Type="StoredProcQuery" Name="SPARGE_LOKASYON">
+        <ProcName>SPARGE_LOKASYON</ProcName>
+      </Query>
+      <Query Type="StoredProcQuery" Name="SPARGE_OPDURUM">
+        <ProcName>SPARGE_OPDURUM</ProcName>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="dsCPM">
+          <View Name="SPARGE_PROSESANALIZ" />
+          <View Name="REFKRT">
+            <Field Name="KOD" Type="String" />
+            <Field Name="ACIKLAMA" Type="String" />
+          </View>
+          <View Name="Lokasyon">
+            <Field Name="KOD" Type="String" />
+            <Field Name="ACIKLAMA" Type="String" />
+          </View>
+          <View Name="SPARGE_LOKASYON">
+            <Field Name="KOD" Type="Int32" />
+            <Field Name="ACIKLAMA" Type="String" />
+          </View>
+          <View Name="SPARGE_OPDURUM">
+            <Field Name="KOD" Type="String" />
+            <Field Name="ACIKLAMA" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource2">
+      <Connection Name="localhost_PLCKAYITLARI_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="192.168.110.9" />
+          <Parameter Name="database" Value="PLCKAYITLARI" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="VW_ARGEANLIKHAREKET">
+        <Tables>
+          <Table Name="VW_ARGEANLIKHAREKET" X="30" Y="30" Width="125" Height="262" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="VW_ARGEANLIKHAREKET" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="VW_ARGEANLIKHAREKET">
+            <Field Name="TANIM" Type="String" />
+            <Field Name="TARIH" Type="DateTime" />
+            <Field Name="PLCID" Type="Int32" />
+            <Field Name="DURUM" Type="String" />
+            <Field Name="KOLON1" Type="Double" />
+            <Field Name="KOLON2" Type="Double" />
+            <Field Name="KOLON3" Type="Double" />
+            <Field Name="KOLON4" Type="Double" />
+            <Field Name="KOLON5" Type="Double" />
+            <Field Name="KOLON6" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="pTarih" Type="System.DateTime" Value="2021-02-19T00:00:00" />
+    <Parameter Name="pProsesDurum" Type="System.Int32" Value="-1">
+      <DynamicListLookUpSettings DataSourceName="dashboardSqlDataSource1" DataMember="SPARGE_OPDURUM" ValueMember="KOD" DisplayMember="ACIKLAMA" />
+    </Parameter>
+    <Parameter Name="pIsletmeKod" Type="System.Int64" Value="-1">
+      <DynamicListLookUpSettings DataSourceName="dashboardSqlDataSource1" DataMember="SPARGE_LOKASYON" ValueMember="KOD" DisplayMember="ACIKLAMA" />
+    </Parameter>
+  </Parameters>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Proses Analiz" DataSource="dashboardSqlDataSource1" DataMember="SPARGE_PROSESANALIZ">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="Isletme" DefaultId="DataItem0" />
+        <Dimension DataMember="Makina Adı" DefaultId="DataItem1" />
+        <Dimension DataMember="Mal Adı" DefaultId="DataItem2" />
+        <Dimension DataMember="Müşteri Adı" DefaultId="DataItem3" />
+        <Dimension DataMember="Op.Baş.Tar." DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem5" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="İşletme">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions EnableBandedRows="true" />
+    </Grid>
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="dashboardSqlDataSource1" DataMember="SPARGE_PROSESANALIZ">
+      <DataItems>
+        <Dimension DataMember="SAS.İplik Adı" DefaultId="DataItem0" />
+        <Dimension DataMember="Isletme" DefaultId="DataItem2" />
+        <Dimension DataMember="Makina Adı" DefaultId="DataItem3" />
+        <Dimension DataMember="Mal Adı" DefaultId="DataItem4" />
+        <Dimension DataMember="Renk Adı" DefaultId="DataItem5" />
+        <Measure DataMember="Miktar" DefaultId="DataItem1">
+          <NumericFormat FormatType="Number" Unit="Ones" />
+        </Measure>
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem0" />
+        <SeriesDimension DefaultId="DataItem2" />
+        <SeriesDimension DefaultId="DataItem3" />
+        <SeriesDimension DefaultId="DataItem4" />
+        <SeriesDimension DefaultId="DataItem5" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Combo Box 1" DataSource="dashboardSqlDataSource1" DataMember="SPARGE_PROSESANALIZ" EnableSearch="true">
+      <DataItems>
+        <Dimension DataMember="Müşteri Adı" DefaultId="DataItem1" />
+        <Dimension DataMember="Isletme" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem1" />
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+    <Gauge ComponentName="gaugeDashboardItem1" Name="Gauges 1" DataSource="dashboardSqlDataSource2" DataMember="VW_ARGEANLIKHAREKET" ViewType="CircularQuarterRight">
+      <DataItems>
+        <Dimension DataMember="TANIM" DefaultId="DataItem0" />
+        <Measure DataMember="KOLON6" SummaryType="Average" DefaultId="DataItem1" />
+        <Dimension DataMember="TARIH" DateTimeGroupInterval="DateHourMinuteSecond" DefaultId="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem0" />
+        <SeriesDimension DefaultId="DataItem2" />
+      </SeriesDimensions>
+      <GaugeElement>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+      </GaugeElement>
+    </Gauge>
+  </Items>
+  <ColorScheme>
+    <Entry DataSource="dashboardSqlDataSource1" DataMember="SPARGE_PROSESANALIZ" PaletteIndex="19">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="Miktar" />
+          <Value Type="System.Decimal" Value="500" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="dashboardSqlDataSource1" DataMember="SPARGE_PROSESANALIZ" PaletteIndex="1">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="Miktar" />
+          <Value Type="System.Decimal" Value="550" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+  </ColorScheme>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutItem DashboardItem="comboBoxDashboardItem1" Weight="7.2289156626506026" />
+      <LayoutGroup Weight="92.7710843373494">
+        <LayoutGroup Orientation="Vertical" Weight="50">
+          <LayoutItem DashboardItem="gridDashboardItem1" Weight="30.519480519480521" />
+          <LayoutItem DashboardItem="gaugeDashboardItem1" Weight="69.480519480519476" />
+        </LayoutGroup>
+        <LayoutItem DashboardItem="cardDashboardItem1" Weight="50" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

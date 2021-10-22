@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="tr-TR">
+	<Title Text="Sipariş Grafikleri" />
+	<DataSources>
+		<SqlDataSource Name="sqlDS" ComponentName="sqlDS">
+		<Connection Name="TEKSTIL_UYG_Connection" ProviderKey="MSSqlServer" FromAppConfig="true">
+			</Connection>
+			<Query Type="SelectQuery" Name="VWARGE_ORDER">
+				<Tables>
+					<Table Name="VWARGE_ORDER" X="30" Y="30" Width="125" Height="723" />
+				</Tables>
+				<Columns>
+					<AllColumns Table="VWARGE_ORDER" />
+				</Columns>
+			</Query>
+			<ResultSchema>
+				<DataSet Name="sqlDS">
+					<View Name="VWARGE_ORDER">
+						<Field Name="Evrak Durumu" Type="String" />
+						<Field Name="Üretim Durumu" Type="String" />
+						<Field Name="Onay Şekli" Type="String" />
+						<Field Name="Değişiklik" Type="String" />
+						<Field Name="Sipariş Türü" Type="String" />
+						<Field Name="Sipariş Tipi" Type="String" />
+						<Field Name="Onay Tipi" Type="String" />
+						<Field Name="Onay Durumu" Type="String" />
+						<Field Name="Onay Tarihi" Type="DateTime" />
+						<Field Name="GIRENKULLANICI" Type="String" />
+						<Field Name="Evrak No" Type="String" />
+						<Field Name="Evrak Tarih" Type="DateTime" />
+						<Field Name="Eski Tarih" Type="Int16" />
+						<Field Name="DEGISTIRENKULLANICI" Type="String" />
+						<Field Name="DEGISTIRENSAAT" Type="DateTime" />
+						<Field Name="GIRENSAAT" Type="DateTime" />
+						<Field Name="Sıra No" Type="Int32" />
+						<Field Name="KALEMSN" Type="Int32" />
+						<Field Name="İçerik" Type="String" />
+						<Field Name="TARIH2" Type="DateTime" />
+						<Field Name="Fiyat" Type="Decimal" />
+						<Field Name="Döviz" Type="String" />
+						<Field Name="Ödeme Şekli" Type="String" />
+						<Field Name="Üretim Yeri" Type="String" />
+						<Field Name="Müşteri" Type="String" />
+						<Field Name="Müşteri Kısa Ad" Type="String" />
+						<Field Name="Proje Kodu" Type="String" />
+						<Field Name="Malzeme Kodu" Type="String" />
+						<Field Name="Malzeme Adı" Type="String" />
+						<Field Name="Renk Kodu" Type="String" />
+						<Field Name="Renk Adı" Type="String" />
+						<Field Name="Renk Grubu" Type="String" />
+						<Field Name="Malzeme Kodu-2" Type="String" />
+						<Field Name="Ürün Tanımı" Type="String" />
+						<Field Name="Boyama Şekli" Type="String" />
+						<Field Name="Ambalaj Şekli" Type="String" />
+						<Field Name="EVRAKTIP" Type="Int16" />
+						<Field Name="Miktar" Type="Decimal" />
+						<Field Name="Kullanılan Miktar" Type="Decimal" />
+						<Field Name="Sevk Miktar" Type="Decimal" />
+						<Field Name="Kalan Miktar" Type="Decimal" />
+						<Field Name="Stok Miktar" Type="Decimal" />
+						<Field Name="Tölerasnlı Stok Miktar" Type="Decimal" />
+						<Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+						<Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+						<Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+					</View>
+				</DataSet>
+			</ResultSchema>
+			<ConnectionOptions CloseConnection="true" />
+		</SqlDataSource>
+	</DataSources>
+	<Items>
+		<Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="sqlDS" DataMember="VWARGE_ORDER">
+			<DataItems>
+				<Dimension DataMember="Malzeme Adı" DefaultId="DataItem0" />
+				<Measure DataMember="Miktar" DefaultId="DataItem1" />
+				<Dimension DataMember="Sipariş Türü" DefaultId="DataItem2" />
+			</DataItems>
+			<GridColumns>
+				<GridDimensionColumn>
+					<Dimension DefaultId="DataItem0" />
+				</GridDimensionColumn>
+				<GridMeasureColumn>
+					<Measure DefaultId="DataItem1" />
+				</GridMeasureColumn>
+				<GridDimensionColumn>
+					<Dimension DefaultId="DataItem2" />
+				</GridDimensionColumn>
+			</GridColumns>
+			<GridOptions />
+		</Grid>
+		<Pie ComponentName="pieDashboardItem1" Name="Pies 1" DataSource="sqlDS" DataMember="VWARGE_ORDER">
+			<DataItems>
+				<Measure DataMember="Sipariş Türü" SummaryType="Count" DefaultId="DataItem0" />
+				<Dimension DataMember="Sipariş Türü" DefaultId="DataItem1" />
+			</DataItems>
+			<Arguments>
+				<Argument DefaultId="DataItem1" />
+			</Arguments>
+			<Values>
+				<Value DefaultId="DataItem0" />
+			</Values>
+		</Pie>
+		<Chart ComponentName="chartDashboardItem1" Name="Chart 1" DataSource="sqlDS" DataMember="VWARGE_ORDER">
+			<DataItems>
+				<Measure DataMember="Miktar" DefaultId="DataItem1" />
+				<Dimension DataMember="Müşteri" DefaultId="DataItem0" />
+				<Measure DataMember="Renk Adı" SummaryType="Count" DefaultId="DataItem2" />
+			</DataItems>
+			<Arguments>
+				<Argument DefaultId="DataItem0" />
+			</Arguments>
+			<Panes>
+				<Pane Name="Pane 1">
+					<Series>
+						<Simple>
+							<Value DefaultId="DataItem1" />
+						</Simple>
+						<Simple>
+							<Value DefaultId="DataItem2" />
+						</Simple>
+					</Series>
+				</Pane>
+			</Panes>
+		</Chart>
+		<Treemap ComponentName="treemapDashboardItem1" Name="Treemap 1" DataSource="sqlDS" DataMember="VWARGE_ORDER">
+			<DataItems>
+				<Dimension DataMember="Müşteri" DefaultId="DataItem1" />
+				<Measure DataMember="Miktar" DefaultId="DataItem0" />
+			</DataItems>
+			<Values>
+				<Value DefaultId="DataItem0" />
+			</Values>
+			<Arguments>
+				<Argument DefaultId="DataItem1" />
+			</Arguments>
+		</Treemap>
+		<Gauge ComponentName="gaugeDashboardItem1" Name="Gauges 1" DataSource="sqlDS" DataMember="VWARGE_ORDER">
+			<DataItems>
+				<Measure DataMember="Miktar" DefaultId="DataItem0" />
+				<Measure DataMember="Sevk Miktar" DefaultId="DataItem1" />
+				<Dimension DataMember="Malzeme Adı" DefaultId="DataItem2" />
+			</DataItems>
+			<SeriesDimensions>
+				<SeriesDimension DefaultId="DataItem2" />
+			</SeriesDimensions>
+			<GaugeElement>
+				<TargetValue DefaultId="DataItem0" />
+				<ActualValue DefaultId="DataItem1" />
+				<AbsoluteVariationNumericFormat />
+				<PercentVariationNumericFormat />
+				<PercentOfTargetNumericFormat />
+			</GaugeElement>
+		</Gauge>
+		<DateFilter ComponentName="dateFilterDashboardItem1" Name="Date Filter 1" DataSource="sqlDS" DataMember="VWARGE_ORDER">
+			<DataItems>
+				<Dimension DataMember="Evrak Tarih" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+				<Dimension DataMember="Onay Tarihi" DefaultId="DataItem1" />
+			</DataItems>
+			<HiddenDimensions>
+				<Dimension DefaultId="DataItem1" />
+			</HiddenDimensions>
+			<Dimension DefaultId="DataItem0" />
+		</DateFilter>
+	</Items>
+	<LayoutTree>
+		<LayoutGroup Orientation="Vertical" Weight="100">
+			<LayoutGroup Weight="53.333333333333336">
+				<LayoutGroup Orientation="Vertical" Weight="47.32472324723247">
+					<LayoutItem DashboardItem="dateFilterDashboardItem1" Weight="26.282051282051281" />
+					<LayoutItem DashboardItem="gridDashboardItem1" Weight="73.717948717948715" />
+				</LayoutGroup>
+				<LayoutGroup Weight="52.67527675276753">
+					<LayoutItem DashboardItem="pieDashboardItem1" Weight="48.161120840630474" />
+					<LayoutItem DashboardItem="gaugeDashboardItem1" Weight="51.838879159369526" />
+				</LayoutGroup>
+			</LayoutGroup>
+			<LayoutGroup Weight="46.666666666666664">
+				<LayoutItem DashboardItem="treemapDashboardItem1" Weight="47.32472324723247" />
+				<LayoutItem DashboardItem="chartDashboardItem1" Weight="52.67527675276753" />
+			</LayoutGroup>
+		</LayoutGroup>
+	</LayoutTree>
+</Dashboard>

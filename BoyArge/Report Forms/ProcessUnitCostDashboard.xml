@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Kontrol paneli" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="dbArgeConnectionString" FromAppConfig="true" />
+      <Query Type="StoredProcQuery" Name="spProcessUnitCost">
+		<Parameter Name="@MainStockCode" Type="DevExpress.DataAccess.Expression">(System.String)(?MainStockCode)</Parameter>
+        <Parameter Name="@StockFeatureTypeID" Type="DevExpress.DataAccess.Expression">(System.Int32)(?StockFeatureType)</Parameter>
+        <Parameter Name="@OrderAmount" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?OrderAmount)</Parameter>
+        <Parameter Name="@RingBobinNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?RingNo)</Parameter>
+        <Parameter Name="@BukumNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?BukumNo)</Parameter>
+        <Parameter Name="@FinalNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?FinalNo)</Parameter>
+        <Parameter Name="@Date" Type="DevExpress.DataAccess.Expression">(System.DateTime)(?Date)</Parameter>
+        <Parameter Name="@CapacityType" Type="DevExpress.DataAccess.Expression">(System.Int32)(?CapacityType)</Parameter>
+        <Parameter Name="@CalculateType" Type="DevExpress.DataAccess.Expression">(System.Boolean)(?CalculateType)</Parameter>
+        <Parameter Name="@ProductTreeFicheID" Type="DevExpress.DataAccess.Expression">(System.Int32)(?ProductTreeFicheID)</Parameter>
+        <ProcName>spProcessUnitCost</ProcName>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="spProcessUnitCost">
+            <Field Name="MainStockCode" Type="String" />
+            <Field Name="StockFeatureTypeID" Type="Int32" />
+            <Field Name="GroupZoneID" Type="Int32" />
+            <Field Name="ProcessZoneID" Type="Int32" />
+            <Field Name="ZoneName" Type="String" />
+            <Field Name="MachineGroupID" Type="Int32" />
+            <Field Name="StockGroup" Type="String" />
+            <Field Name="StockGroupID" Type="Int32" />
+            <Field Name="LevelType" Type="Int32" />
+            <Field Name="FinalAmount" Type="Decimal" />
+            <Field Name="Level" Type="Int32" />
+            <Field Name="ParentID" Type="Int32" />
+            <Field Name="DyeProcess" Type="Int32" />
+            <Field Name="StockGroupCount" Type="Int32" />
+            <Field Name="Process" Type="String" />
+            <Field Name="ProcessID" Type="Int32" />
+            <Field Name="ProcessCount" Type="Int32" />
+            <Field Name="CalculatedWorkerCount" Type="Int32" />
+            <Field Name="PeriodCount" Type="Decimal" />
+            <Field Name="Wastage" Type="Decimal" />
+            <Field Name="AvgCapacity" Type="Decimal" />
+            <Field Name="FullCapacity" Type="Decimal" />
+            <Field Name="TotalMachineCount" Type="Int32" />
+            <Field Name="CalculatedMachineCount" Type="Int32" />
+            <Field Name="WorkerExpenses" Type="Decimal" />
+            <Field Name="TotalDirectExpenses" Type="Decimal" />
+            <Field Name="DirectExpenses" Type="Decimal" />
+            <Field Name="TotalZoneExpenses" Type="Decimal" />
+            <Field Name="ZoneExpenses" Type="Decimal" />
+            <Field Name="TotalIndirectExpenses" Type="Decimal" />
+            <Field Name="IndirectExpenses" Type="Decimal" />
+            <Field Name="DyeChemicalCost" Type="Decimal" />
+            <Field Name="DGZ" Type="Decimal" />
+            <Field Name="ELK" Type="Decimal" />
+            <Field Name="SU" Type="Decimal" />
+            <Field Name="StockGroupCost" Type="Decimal" />
+            <Field Name="SARFG" Type="Decimal" />
+            <Field Name="SABTG" Type="Decimal" />
+            <Field Name="BKMG" Type="Decimal" />
+            <Field Name="IBKMG" Type="Decimal" />
+            <Field Name="AMRTG" Type="Decimal" />
+            <Field Name="IAMRTG" Type="Decimal" />
+            <Field Name="FNSG" Type="Decimal" />
+            <Field Name="INDRG" Type="Decimal" />
+            <Field Name="DGRG" Type="Decimal" />
+            <Field Name="DailyGroupBottleNeck" Type="Decimal" />
+            <Field Name="MonthlyGroupBottleNeck" Type="Decimal" />
+            <Field Name="DailyProductBottleNeck" Type="Decimal" />
+            <Field Name="MonthlyProductBottleNeck" Type="Decimal" />
+            <Field Name="ShiftCount" Type="Decimal" />
+            <Field Name="ShiftHour" Type="Decimal" />
+            <Field Name="ShiftDay" Type="Decimal" />
+            <Field Name="PersonelHour" Type="Decimal" />
+            <Field Name="PersonelDay" Type="Decimal" />
+            <Field Name="RawMaterialPrice" Type="Decimal" />
+            <Field Name="ProductionUnitCost" Type="Decimal" />
+            <Field Name="FinalProductionUnitCost" Type="Decimal" />
+            <Field Name="FixCost" Type="Double" />
+            <Field Name="UnitCost" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Today" Expression="Today()" DataType="Auto" DataMember="VW_STOCK" />
+        <CalculatedField Name="Hesaplanan alan 1" Expression="[TotalIndirectExpenses]/[ProcessCount]/[MonthlyProductBottleNeck]" DataType="Auto" DataMember="spProcessUnitCost" />
+        <CalculatedField Name="Kapasite_Yüzde" Expression="[DailyProductBottleNeck]*[FinalAmount]/100 / ([FullCapacity])" DataType="Auto" DataMember="spProcessUnitCost" />
+        <CalculatedField Name="Hesaplanan alan 2" Expression="[ColumnName]='PaymentDate'" DataType="Auto" DataMember="tblParameter_PaymentDate" />
+        <CalculatedField Name="Uretim_Iscilik" Expression="[ZoneExpenses]+[DirectExpenses]" DataType="Auto" DataMember="spProcessUnitCost" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Process Maliyetler" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Dimension DataMember="StockGroup" DefaultId="DataItem0" />
+        <Dimension DataMember="Process" DefaultId="DataItem1" />
+        <Dimension DataMember="ProductionUnitCost" Name="Üretim Maliyeti" DefaultId="DataItem4" />
+        <Dimension DataMember="DailyProductBottleNeck" Name="Dar Boğaz (Kg)" DefaultId="DataItem7">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="FinalAmount" Name="Yüzde(%)" DefaultId="DataItem8">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="FinalProductionUnitCost" Name="Birim Maliyeti" DefaultId="DataItem2">
+          <NumericFormat FormatType="Number" Precision="3" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="FullCapacity" Name="Kapasite (Kg)" DefaultId="DataItem3">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 2" Enabled="false">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="33" />
+                  <IconSettings IconType="DirectionalYellowSideArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="67" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem2" DataItemApplyTo="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="DirectionalGreenTriangleUp" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="33" />
+                  <IconSettings IconType="DirectionalYellowDash" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="67" />
+                  <IconSettings IconType="DirectionalRedTriangleDown" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 3" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionGradientRangeBar ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <BarStyleSettings PredefinedColor="GradientRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                  <BarStyleSettings PredefinedColor="GradientBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+            <BarOptions />
+          </FormatConditionGradientRangeBar>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="117.31712548378012">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="81.421587089489179">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="87.550093644612019">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="83.172588962381425">
+          <Dimension DefaultId="DataItem7" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="77.9195833437047">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="63.911568360566775">
+          <Dimension DefaultId="DataItem8" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="84.923590835273657">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions EnableBandedRows="true" ColumnWidthMode="Manual" />
+    </Grid>
+    <Card ComponentName="cardDashboardItem1" Name="Fatura Giderleri" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="ELK" Name="ELEKTRİK" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" Precision="3" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+        <Measure DataMember="SU" Name="SU" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" Precision="3" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+        <Measure DataMember="DGZ" Name="DOĞAL GAZ" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" Precision="3" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="1" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 3" DeltaValueType="ActualValue" CardId="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem2" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem2" Name="Process Bazlı Giderler" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost" ContentArrangementMode="FixedColumnCount">
+      <DataItems>
+        <Measure DataMember="BKMG" Name="MAKİNE BAKIM ONARIM" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+        <Measure DataMember="AMRTG" Name="MAKİNE AMORTİSMAN" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+        <Measure DataMember="DyeChemicalCost" Name="KİMYASAL" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 3" DeltaValueType="ActualValue" CardId="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem2" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem3" Name="İşletme Giderleri" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="WorkerExpenses" Name="ÜRETİM İŞÇİLİK" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+        <Measure DataMember="DirectExpenses" Name="DİREKT İŞÇİLİK" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="ZoneExpenses" Name="İŞLETME İŞÇİLİK" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 3" DeltaValueType="ActualValue" CardId="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem2" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Chart ComponentName="chartDashboardItem1" Name="Process Maliyetler Grafiği" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <InteractivityOptions IgnoreMasterFilters="true" />
+      <DataItems>
+        <Dimension DataMember="Process" DefaultId="DataItem1" />
+        <Dimension DataMember="StockGroup" DefaultId="DataItem0" />
+        <Measure DataMember="FinalProductionUnitCost" Name="Üretim Maliyetleri" DefaultId="DataItem2" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </HiddenDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Bölme 1">
+          <Series>
+            <Simple SeriesType="Line">
+              <Value DefaultId="DataItem2" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend IsInsidePosition="true" />
+    </Chart>
+    <TabContainer ComponentName="tabContainerDashboardItem1" Name="Tab Container 1">
+      <Pages>
+        <Page ComponentName="dashboardTabPage1" Name="Process Maliyet Kalemleri">
+          <InteractivityOptions IgnoreMasterFilters="true" IsMasterFilter="false" />
+        </Page>
+      </Pages>
+    </TabContainer>
+    <Card ComponentName="cardDashboardItem4" Name="İşletme Giderleri" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="SABTG" Name="SABİT GİDERLER" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="SARFG" Name="SARF GİDERLER" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="FNSG" Name="FİNANS GİDERLER" SummaryType="Average" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 3" DeltaValueType="ActualValue" CardId="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem2" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem5" Name="İşletme Giderleri" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="TotalIndirectExpenses" Name="İDARİ PERSONEL" SummaryType="Average" DefaultId="DataItem3">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" CurrencyCultureName="en-US" />
+        </Measure>
+        <Measure DataMember="INDRG" Name="İNDİRİM GİDERLER" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="DGRG" Name="DİĞER GİDERLER" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem3">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 3" DeltaValueType="ActualValue" CardId="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem3" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem6" Name="İşletme Giderleri" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="IBKMG" Name="İŞLETME BAKIM ONARIM" SummaryType="Average" DefaultId="DataItem0">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="IAMRTG" Name="İŞLETME AMORTİSMAN" SummaryType="Average" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="RawMaterialPrice" Name="HAMMADDE" SummaryType="Average" DefaultId="DataItem2">
+          <NumericFormat FormatType="Currency" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem1">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 3" DeltaValueType="ActualValue" CardId="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleRed" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PalePurple" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+      <Card>
+        <ActualValue DefaultId="DataItem2" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <Card ComponentName="cardDashboardItem7" Name="Kartlar 1" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="MonthlyProductBottleNeck" Name="AYLIK KAPASİTE" SummaryType="Average" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeGradient ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="GradientBlue" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="10" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="30" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="GradientTransparent" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="70" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="90" />
+                  <AppearanceSettings AppearanceType="GradientRed" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeGradient>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeGradient ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="GradientTransparent" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="GradientYellow" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeGradient>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <ComboBox ComponentName="comboBoxDashboardItem3" Name="İşletme Tipine Göre Filtre" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost" EnableSearch="true" ComboBoxType="Checked">
+      <DataItems>
+        <Dimension DataMember="ZoneName" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+    <ComboBox ComponentName="comboBoxDashboardItem4" Name="Process Gruplarına Göre Filtre" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost" EnableSearch="true" ComboBoxType="Checked">
+      <DataItems>
+        <Dimension DataMember="StockGroup" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+    <Card ComponentName="cardDashboardItem8" Name="Kartlar 1" ShowCaption="false" ParentContainer="dashboardTabPage1" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="FinalProductionUnitCost" Name="ÜRETİM MALİYETİ" DefaultId="DataItem0" />
+      </DataItems>
+      <FormatRules>
+        <CardItemDeltaFormatRule Name="FormatRule 1" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeGradient ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="GradientBlue" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="10" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="30" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <AppearanceSettings AppearanceType="GradientTransparent" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="70" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="90" />
+                  <AppearanceSettings AppearanceType="GradientRed" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeGradient>
+        </CardItemDeltaFormatRule>
+        <CardItemDeltaFormatRule Name="FormatRule 2" DeltaValueType="ActualValue" CardId="DataItem0">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="PaleOrange" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0.01" />
+                  <AppearanceSettings AppearanceType="PaleGreen" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </CardItemDeltaFormatRule>
+      </FormatRules>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate MinWidth="100" MaxWidth="150" Type="Lightweight">
+          <MainValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <DeltaIndicator Visible="false" />
+          <Sparkline Visible="false" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutTabContainer DashboardItem="tabContainerDashboardItem1" Weight="100">
+        <LayoutTabPage Orientation="Vertical" DashboardItem="dashboardTabPage1" Weight="100">
+          <LayoutGroup Weight="51.515151515151516">
+            <LayoutGroup Orientation="Vertical" Weight="38.807649043869517">
+              <LayoutGroup Weight="37.151702786377712">
+                <LayoutItem DashboardItem="cardDashboardItem8" Weight="25.217391304347824" />
+                <LayoutItem DashboardItem="cardDashboardItem7" Weight="22.89855072463768" />
+                <LayoutGroup Orientation="Vertical" Weight="51.884057971014492">
+                  <LayoutItem DashboardItem="comboBoxDashboardItem3" Weight="50" />
+                  <LayoutItem DashboardItem="comboBoxDashboardItem4" Weight="50" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem DashboardItem="gridDashboardItem1" Weight="62.848297213622288" />
+            </LayoutGroup>
+            <LayoutItem DashboardItem="chartDashboardItem1" Weight="61.192350956130483" />
+          </LayoutGroup>
+          <LayoutGroup Orientation="Vertical" Weight="48.484848484848484">
+            <LayoutGroup Weight="31.578947368421051">
+              <LayoutItem DashboardItem="cardDashboardItem1" Weight="38.807649043869517" />
+              <LayoutItem DashboardItem="cardDashboardItem4" Weight="61.192350956130483" />
+            </LayoutGroup>
+            <LayoutGroup Weight="35.19736842105263">
+              <LayoutItem DashboardItem="cardDashboardItem3" Weight="38.807649043869517" />
+              <LayoutItem DashboardItem="cardDashboardItem5" Weight="61.192350956130483" />
+            </LayoutGroup>
+            <LayoutGroup Weight="33.223684210526315">
+              <LayoutItem DashboardItem="cardDashboardItem2" Weight="38.807649043869517" />
+              <LayoutItem DashboardItem="cardDashboardItem6" Weight="61.192350956130483" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutTabPage>
+      </LayoutTabContainer>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

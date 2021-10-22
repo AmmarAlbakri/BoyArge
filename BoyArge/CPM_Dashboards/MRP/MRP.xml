@@ -1,0 +1,1878 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Dashboard CurrencyCulture="tr-TR">
+  <Title Text="M R P" IncludeMasterFilterState="false" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="TEKSTIL_UYG_Connection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Sipariş_Onay">
+        <Tables>
+          <Table Name="VWARGE_ORDER" X="30" Y="30" Width="125" Height="902" />
+          <Table Name="VWARGE_CONFIRM" X="185" Y="30" Width="125" Height="462" />
+          <Relation Type="Inner" Parent="VWARGE_ORDER" Nested="VWARGE_CONFIRM">
+            <KeyColumn Parent="KALEMSN" Nested="KALEMSN" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_CONFIRM" Name="ID" />
+          <Column Table="VWARGE_CONFIRM" Name="KALEMSN" Alias="VWARGE_CONFIRM_KALEMSN" />
+          <Column Table="VWARGE_CONFIRM" Name="SIRANO" />
+          <Column Table="VWARGE_CONFIRM" Name="ONAYDURUM" />
+          <Column Table="VWARGE_CONFIRM" Name="ONAYKULLANICI" />
+          <Column Table="VWARGE_CONFIRM" Name="ONAYTARIH" />
+          <Column Table="VWARGE_CONFIRM" Name="ONAYSAAT" />
+          <Column Table="VWARGE_CONFIRM" Name="ACIKLAMA" />
+          <Column Table="VWARGE_CONFIRM" Name="GIRENKULLANICI" Alias="VWARGE_CONFIRM_GIRENKULLANICI" />
+          <Column Table="VWARGE_CONFIRM" Name="GIRENTARIH" />
+          <Column Table="VWARGE_CONFIRM" Name="GIRENSAAT" />
+          <Column Table="VWARGE_CONFIRM" Name="GIRENKAYNAK" />
+          <Column Table="VWARGE_CONFIRM" Name="GIRENSURUM" />
+          <Column Table="VWARGE_CONFIRM" Name="DEGISTIRENKULLANICI" Alias="VWARGE_CONFIRM_DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_CONFIRM" Name="DEGISTIRENTARIH" />
+          <Column Table="VWARGE_CONFIRM" Name="DEGISTIRENSAAT" Alias="VWARGE_CONFIRM_DEGISTIRENSAAT" />
+          <Column Table="VWARGE_CONFIRM" Name="DEGISTIRENKAYNAK" />
+          <Column Table="VWARGE_CONFIRM" Name="DEGISTIRENSURUM" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_CONFIRM" Name="Onay Tipi" Alias="VWARGE_CONFIRM_Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Fiyat" />
+          <Column Table="VWARGE_ORDER" Name="Döviz" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="Siparişler">
+        <Tables>
+          <Table Name="VWARGE_ORDER" X="30" Y="30" Width="125" Height="962" />
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Fiyat" />
+          <Column Table="VWARGE_ORDER" Name="Döviz" />
+          <Column Table="VWARGE_ORDER" Name="Stok Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Tölerasnlı Stok Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Durumu" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="Reçeteler">
+        <Tables>
+          <Table Name="VWARGE_RECIPE_STATUS" X="30" Y="60" Width="125" Height="202" />
+          <Table Name="VWARGE_ORDER" X="240" Y="70" Width="125" Height="822" />
+          <Table Name="VWARGE_RECIPE_ORDER" X="30" Y="300" Width="125" Height="322" />
+          <Table Name="VWARGE_RECIPE_PRODUCT" X="395" Y="30" Width="125" Height="322" />
+          <Relation Type="Inner" Parent="VWARGE_RECIPE_STATUS" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="KALEMSN" Nested="KALEMSN" />
+          </Relation>
+          <Relation Type="LeftOuter" Parent="VWARGE_RECIPE_STATUS" Nested="VWARGE_RECIPE_ORDER">
+            <KeyColumn Parent="_SIPRECETENO" Nested="Reçete No" />
+          </Relation>
+          <Relation Type="LeftOuter" Parent="VWARGE_RECIPE_STATUS" Nested="VWARGE_RECIPE_PRODUCT">
+            <KeyColumn Parent="_RECETENO" Nested="Reçete No" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_RECIPE_STATUS" Name="EVRAKNO" />
+          <Column Table="VWARGE_RECIPE_STATUS" Name="KALEMSN" />
+          <Column Table="VWARGE_RECIPE_STATUS" Name="EVRAKSN" />
+          <Column Table="VWARGE_RECIPE_STATUS" Name="Ekru Reçete Durumu" />
+          <Column Table="VWARGE_RECIPE_STATUS" Name="Renkli Reçete Durumu" />
+          <Column Table="VWARGE_RECIPE_STATUS" Name="_RECETENO" />
+          <Column Table="VWARGE_RECIPE_STATUS" Name="_SIPRECETENO" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" Alias="VWARGE_ORDER_KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="ID" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Ana Seviye" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Seviye" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Reçete No" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Boyama İşlemi" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Seviye Türü" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Malzeme Kodu" Alias="VWARGE_RECIPE_ORDER_Malzeme Kodu" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Malzeme Adı" Alias="VWARGE_RECIPE_ORDER_Malzeme Adı" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Renk Kodu" Alias="VWARGE_RECIPE_ORDER_Renk Kodu" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Renk Adı" Alias="VWARGE_RECIPE_ORDER_Renk Adı" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Miktar" Alias="VWARGE_RECIPE_ORDER_Miktar" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Fire(%)" />
+          <Column Table="VWARGE_RECIPE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="ID" Alias="VWARGE_RECIPE_PRODUCT_ID" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Üretim Yeri" Alias="VWARGE_RECIPE_PRODUCT_Üretim Yeri" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Ana Seviye" Alias="VWARGE_RECIPE_PRODUCT_Ana Seviye" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Seviye" Alias="VWARGE_RECIPE_PRODUCT_Seviye" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Reçete No" Alias="VWARGE_RECIPE_PRODUCT_Reçete No" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Boyama İşlemi" Alias="VWARGE_RECIPE_PRODUCT_Boyama İşlemi" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Seviye Türü" Alias="VWARGE_RECIPE_PRODUCT_Seviye Türü" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Renk Adı" Alias="VWARGE_RECIPE_PRODUCT_Renk Adı" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Renk Kodu" Alias="VWARGE_RECIPE_PRODUCT_Renk Kodu" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Malzeme Kodu" Alias="VWARGE_RECIPE_PRODUCT_Malzeme Kodu" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Malzeme Adı" Alias="VWARGE_RECIPE_PRODUCT_Malzeme Adı" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Miktar(%)" />
+          <Column Table="VWARGE_RECIPE_PRODUCT" Name="Fire(%)" Alias="VWARGE_RECIPE_PRODUCT_Fire(%)" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="MRP_Sipariş_Bağlantı">
+        <Tables>
+          <Table Name="VWARGE_MRP" X="30" Y="30" Width="125" Height="302" />
+          <Table Name="VWARGE_ORDER" X="185" Y="30" Width="125" Height="962" />
+          <Relation Type="LeftOuter" Parent="VWARGE_MRP" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="KALEMSN" Nested="KALEMSN" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_MRP" Name="Evrak Durumu" />
+          <Column Table="VWARGE_MRP" Name="_PLANMIKTAR" />
+          <Column Table="VWARGE_MRP" Name="MIKTAR" />
+          <Column Table="VWARGE_MRP" Name="_SIPKALANMIKTAR" />
+          <Column Table="VWARGE_MRP" Name="EVRAKNO" />
+          <Column Table="VWARGE_MRP" Name="KALEMSN" />
+          <Column Table="VWARGE_MRP" Name="HESAPKOD" />
+          <Column Table="VWARGE_MRP" Name="EVRAKSN" />
+          <Column Table="VWARGE_MRP" Name="TEXSPK_ALTMUSTERI" />
+          <Column Table="VWARGE_MRP" Name="TEXSPK_ANAMUSTERI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" Alias="VWARGE_ORDER_Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" Alias="VWARGE_ORDER_KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_MRP" Name="_TEKSTILONAY" />
+          <Column Table="VWARGE_MRP" Name="_FANTAZIONAY" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Durumu" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="MRP_EVRAK">
+        <Tables>
+          <Table Name="VWARGE_MRP_EVRAK" X="30" Y="30" Width="125" Height="442" />
+          <Table Name="VWARGE_ORDER" X="185" Y="30" Width="125" Height="962" />
+          <Table Name="VWARGE_MRP_KALEM" X="340" Y="30" Width="125" Height="642" />
+          <Relation Type="LeftOuter" Parent="VWARGE_MRP_EVRAK" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="KalemSN" Nested="KALEMSN" />
+          </Relation>
+          <Relation Type="LeftOuter" Parent="VWARGE_MRP_EVRAK" Nested="VWARGE_MRP_KALEM">
+            <KeyColumn Parent="EVRAKNO" Nested="EVRAKNO" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_MRP_EVRAK" Name="MRP Evrak Durum" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="EVRAKNO" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="KalemSN" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="Sipariş_No" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="kalite" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="EVRAKTARIH" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="DUZENLEMEZAMAN" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="SIRANO" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="MALKOD" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="MIKTAR" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="KULLANILANMIKTAR" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="SEVKMIKTAR" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="_KALANMIKTAR" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="DEGISTIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="DEGISTIREN_TARIH" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="GIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="TEXSPK_ID" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Evrak Durum" Alias="VWARGE_MRP_KALEM_MRP Evrak Durum" />
+          <Column Table="VWARGE_MRP_KALEM" Name="EVRAKTARIH" Alias="VWARGE_MRP_KALEM_EVRAKTARIH" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DUZENLEMEZAMAN" Alias="VWARGE_MRP_KALEM_DUZENLEMEZAMAN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="EVRAKNO" Alias="VWARGE_MRP_KALEM_EVRAKNO" />
+          <Column Table="VWARGE_MRP_KALEM" Name="SIRANO" Alias="VWARGE_MRP_KALEM_SIRANO" />
+          <Column Table="VWARGE_MRP_KALEM" Name="KalemSN" Alias="VWARGE_MRP_KALEM_KalemSN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Sipariş_No" Alias="VWARGE_MRP_KALEM_Sipariş_No" />
+          <Column Table="VWARGE_MRP_KALEM" Name="kalite" Alias="VWARGE_MRP_KALEM_kalite" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MALKOD" Alias="VWARGE_MRP_KALEM_MALKOD" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP(%)" />
+          <Column Table="VWARGE_MRP_KALEM" Name="FİRE(%)" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MIKTAR" Alias="VWARGE_MRP_KALEM_MIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="KULLANILANMIKTAR" Alias="VWARGE_MRP_KALEM_KULLANILANMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="SEVKMIKTAR" Alias="VWARGE_MRP_KALEM_SEVKMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="_KALANMIKTAR" Alias="VWARGE_MRP_KALEM__KALANMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="BKOD1" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DEGISTIREN_KULLANICI" Alias="VWARGE_MRP_KALEM_DEGISTIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DEGISTIREN_TARIH" Alias="VWARGE_MRP_KALEM_DEGISTIREN_TARIH" />
+          <Column Table="VWARGE_MRP_KALEM" Name="GIREN_KULLANICI" Alias="VWARGE_MRP_KALEM_GIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_KALEM" Name="TEXSPK_ID" Alias="VWARGE_MRP_KALEM_TEXSPK_ID" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Lokasyon" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Tipi" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP KalemSN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Renk Kodu" Alias="VWARGE_MRP_KALEM_Renk Kodu" />
+          <Column Table="VWARGE_MRP_EVRAK" Name="Arge Evrak Durum" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Durumu" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="MRP_KALEM">
+        <Tables>
+          <Table Name="VWARGE_MRP_KALEM" X="30" Y="30" Width="125" Height="649" />
+          <Table Name="VWARGE_ORDER" X="185" Y="30" Width="125" Height="909" />
+          <Relation Type="LeftOuter" Parent="VWARGE_MRP_KALEM" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="Sipariş SN" Nested="KALEMSN" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Evrak Durum" />
+          <Column Table="VWARGE_MRP_KALEM" Name="EVRAKTARIH" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DUZENLEMEZAMAN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="EVRAKNO" />
+          <Column Table="VWARGE_MRP_KALEM" Name="SIRANO" />
+          <Column Table="VWARGE_MRP_KALEM" Name="KalemSN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Sipariş_No" />
+          <Column Table="VWARGE_MRP_KALEM" Name="kalite" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MALKOD" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP(%)" />
+          <Column Table="VWARGE_MRP_KALEM" Name="FİRE(%)" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="KULLANILANMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="SEVKMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="_KALANMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DEGISTIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DEGISTIREN_TARIH" />
+          <Column Table="VWARGE_MRP_KALEM" Name="GIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_KALEM" Name="TEXSPK_ID" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Lokasyon" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Tipi" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Sipariş SN" />
+        </Columns>
+        <Sorting>
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Tipi" Descending="true" />
+        </Sorting>
+      </Query>
+      <Query Type="SelectQuery" Name="İş_Emri_Bağlantı">
+        <Tables>
+          <Table Name="VWARGE_MRP_KALEM" X="30" Y="30" Width="125" Height="642" />
+          <Table Name="VWARGE_ORDER" X="185" Y="30" Width="125" Height="962" />
+          <Relation Type="LeftOuter" Parent="VWARGE_MRP_KALEM" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="KalemSN" Nested="KALEMSN" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Evrak Durum" />
+          <Column Table="VWARGE_MRP_KALEM" Name="EVRAKTARIH" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DUZENLEMEZAMAN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="EVRAKNO" />
+          <Column Table="VWARGE_MRP_KALEM" Name="SIRANO" />
+          <Column Table="VWARGE_MRP_KALEM" Name="KalemSN" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Sipariş_No" />
+          <Column Table="VWARGE_MRP_KALEM" Name="kalite" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MALKOD" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP(%)" />
+          <Column Table="VWARGE_MRP_KALEM" Name="FİRE(%)" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="KULLANILANMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="SEVKMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="_KALANMIKTAR" />
+          <Column Table="VWARGE_MRP_KALEM" Name="BKOD1" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DEGISTIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_KALEM" Name="DEGISTIREN_TARIH" />
+          <Column Table="VWARGE_MRP_KALEM" Name="GIREN_KULLANICI" />
+          <Column Table="VWARGE_MRP_KALEM" Name="TEXSPK_ID" />
+          <Column Table="VWARGE_MRP_KALEM" Name="Lokasyon" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_MRP_KALEM" Name="GIRENSAAT" Alias="VWARGE_MRP_KALEM_GIRENSAAT" />
+          <Column Table="VWARGE_MRP_KALEM" Name="MRP KalemSN" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Durumu" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="IS_EMRI">
+        <Tables>
+          <Table Name="VWARGE_IS_EMRI" X="30" Y="30" Width="125" Height="582" />
+          <Table Name="VWARGE_PROCESS" X="185" Y="30" Width="125" Height="1102" />
+          <Table Name="VWARGE_ORDER" X="340" Y="30" Width="125" Height="962" />
+          <Relation Type="LeftOuter" Parent="VWARGE_IS_EMRI" Nested="VWARGE_PROCESS">
+            <KeyColumn Parent="Refakart No" Nested="EVRAKNO" />
+          </Relation>
+          <Relation Type="LeftOuter" Parent="VWARGE_IS_EMRI" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="Sipariş No" Nested="Evrak No" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_IS_EMRI" Name="ACIKLAMA" />
+          <Column Table="VWARGE_IS_EMRI" Name="Refakart No" />
+          <Column Table="VWARGE_IS_EMRI" Name="Sipariş No" />
+          <Column Table="VWARGE_IS_EMRI" Name="Lokasyon" />
+          <Column Table="VWARGE_IS_EMRI" Name="MRP Tipi" />
+          <Column Table="VWARGE_IS_EMRI" Name="EVRAKTARIH" />
+          <Column Table="VWARGE_IS_EMRI" Name="MALKOD" />
+          <Column Table="VWARGE_IS_EMRI" Name="MIKTAR" />
+          <Column Table="VWARGE_IS_EMRI" Name="KULLANILANMIKTAR" />
+          <Column Table="VWARGE_IS_EMRI" Name="_KALANMIKTAR" />
+          <Column Table="VWARGE_IS_EMRI" Name="Evrak Durum" />
+          <Column Table="VWARGE_IS_EMRI" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_IS_EMRI" Name="GIRENSAAT" />
+          <Column Table="VWARGE_IS_EMRI" Name="GIRENTARIH" />
+          <Column Table="VWARGE_IS_EMRI" Name="KALEMSN" />
+          <Column Table="VWARGE_IS_EMRI" Name="NKOD5" />
+          <Column Table="VWARGE_IS_EMRI" Name="PROJEKOD" />
+          <Column Table="VWARGE_IS_EMRI" Name="MRP No" />
+          <Column Table="VWARGE_IS_EMRI" Name="SONKAYNAKEVRAKTARIH" />
+          <Column Table="VWARGE_IS_EMRI" Name="SONKAYNAKEVRAKTIP" />
+          <Column Table="VWARGE_IS_EMRI" Name="SONKAYNAKSIRANO" />
+          <Column Table="VWARGE_IS_EMRI" Name="TEXSHB_GMIKTAR" />
+          <Column Table="VWARGE_IS_EMRI" Name="TEXSHB_CMIKTAR" />
+          <Column Table="VWARGE_PROCESS" Name="ISMERKEZAD" />
+          <Column Table="VWARGE_PROCESS" Name="EVRAKNO" />
+          <Column Table="VWARGE_PROCESS" Name="OPERASYONNO" />
+          <Column Table="VWARGE_PROCESS" Name="ISMERKEZKOD" />
+          <Column Table="VWARGE_PROCESS" Name="ACIKLAMA" Alias="VWARGE_PROCESS_ACIKLAMA" />
+          <Column Table="VWARGE_PROCESS" Name="OPBITTARIHSAAT" />
+          <Column Table="VWARGE_PROCESS" Name="OPBASTARIHSAAT" />
+          <Column Table="VWARGE_PROCESS" Name="NKOD1" />
+          <Column Table="VWARGE_PROCESS" Name="NKOD2" />
+          <Column Table="VWARGE_PROCESS" Name="NKOD3" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" Alias="VWARGE_ORDER_GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" Alias="VWARGE_ORDER_GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" Alias="VWARGE_ORDER_KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_IS_EMRI" Name="RENKKOD" />
+          <Column Table="VWARGE_IS_EMRI" Name="MALAD" />
+          <Column Table="VWARGE_IS_EMRI" Name="LKOD2" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Durumu" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="Lead Time">
+        <Tables>
+          <Table Name="VWARGE_LEAD_TIME" X="30" Y="30" Width="125" Height="582" />
+          <Table Name="VWARGE_ORDER" X="185" Y="30" Width="125" Height="962" />
+          <Table Name="VWARGE_DEPO" X="340" Y="30" Width="125" Height="162" />
+          <Relation Type="LeftOuter" Parent="VWARGE_LEAD_TIME" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="Sipariş KalemSN" Nested="KALEMSN" />
+          </Relation>
+          <Relation Type="LeftOuter" Parent="VWARGE_ORDER" Nested="VWARGE_DEPO">
+            <KeyColumn Parent="KALEMSN" Nested="SIPARISSN" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_LEAD_TIME" Name="KALEMSN" Alias="VWARGE_LEAD_TIME_KALEMSN" />
+          <Column Table="VWARGE_LEAD_TIME" Name="TBASTARIH" />
+          <Column Table="VWARGE_LEAD_TIME" Name="TBITTARIH" />
+          <Column Table="VWARGE_LEAD_TIME" Name="BBASTARIH" />
+          <Column Table="VWARGE_LEAD_TIME" Name="BBITTARIH" />
+          <Column Table="VWARGE_LEAD_TIME" Name="FBASTARIH" />
+          <Column Table="VWARGE_LEAD_TIME" Name="FBITTARIH" />
+          <Column Table="VWARGE_LEAD_TIME" Name="ILKYUKLEME" />
+          <Column Table="VWARGE_LEAD_TIME" Name="SONYUKLEME" />
+          <Column Table="VWARGE_LEAD_TIME" Name="GIRENKULLANICI" Alias="VWARGE_LEAD_TIME_GIRENKULLANICI" />
+          <Column Table="VWARGE_LEAD_TIME" Name="GIRENSAAT" Alias="VWARGE_LEAD_TIME_GIRENSAAT" />
+          <Column Table="VWARGE_DEPO" Name="SIPARISSN" />
+          <Column Table="VWARGE_DEPO" Name="Depo Giriş" />
+          <Column Table="VWARGE_DEPO" Name="Depo Çıkış" />
+          <Column Table="VWARGE_DEPO" Name="Sevkiyat" />
+          <Column Table="VWARGE_LEAD_TIME" Name="ILK_YUKLEME" />
+          <Column Table="VWARGE_LEAD_TIME" Name="SON_YUKLEME" />
+        </Columns>
+      </Query>
+      <Query Type="SelectQuery" Name="Sevkiyat">
+        <Tables>
+          <Table Name="VWARGE_SEVKIYAT" X="30" Y="30" Width="125" Height="502" />
+          <Table Name="VWARGE_ORDER" X="185" Y="30" Width="125" Height="902" />
+          <Relation Type="LeftOuter" Parent="VWARGE_SEVKIYAT" Nested="VWARGE_ORDER">
+            <KeyColumn Parent="Sipariş KalemSN" Nested="KALEMSN" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="VWARGE_SEVKIYAT" Name="Refakat No" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Evrak SN" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Evrak No" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Sipariş KalemSN" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Brüt Miktar" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Net Miktar" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Ambalaj Adeti" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Bobin Sayısı" />
+          <Column Table="VWARGE_SEVKIYAT" Name="İplik No Tür" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Görünüm" />
+          <Column Table="VWARGE_SEVKIYAT" Name="İplik Türü" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Sipariş No" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Renk Kodu" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Renk Adı" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Müşteri" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Sevk Adresi" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Sevk Adresi Kodu" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Gruplar" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Değişiklik" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Türü" />
+          <Column Table="VWARGE_ORDER" Name="Sipariş Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tipi" />
+          <Column Table="VWARGE_ORDER" Name="Onay Durumu" />
+          <Column Table="VWARGE_ORDER" Name="Onay Tarihi" />
+          <Column Table="VWARGE_ORDER" Name="GIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="Evrak No" Alias="VWARGE_ORDER_Evrak No" />
+          <Column Table="VWARGE_ORDER" Name="Evrak Tarih" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENKULLANICI" />
+          <Column Table="VWARGE_ORDER" Name="DEGISTIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="GIRENSAAT" />
+          <Column Table="VWARGE_ORDER" Name="Sıra No" />
+          <Column Table="VWARGE_ORDER" Name="KALEMSN" />
+          <Column Table="VWARGE_ORDER" Name="İçerik" />
+          <Column Table="VWARGE_ORDER" Name="TARIH2" />
+          <Column Table="VWARGE_ORDER" Name="Fiyat" />
+          <Column Table="VWARGE_ORDER" Name="Döviz" />
+          <Column Table="VWARGE_ORDER" Name="Ödeme Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Üretim Yeri" Alias="VWARGE_ORDER_Üretim Yeri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri" Alias="VWARGE_ORDER_Müşteri" />
+          <Column Table="VWARGE_ORDER" Name="Müşteri Kısa Ad" />
+          <Column Table="VWARGE_ORDER" Name="Proje Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Kodu" Alias="VWARGE_ORDER_Renk Kodu" />
+          <Column Table="VWARGE_ORDER" Name="Renk Adı" Alias="VWARGE_ORDER_Renk Adı" />
+          <Column Table="VWARGE_ORDER" Name="Renk Grubu" />
+          <Column Table="VWARGE_ORDER" Name="Malzeme Kodu-2" />
+          <Column Table="VWARGE_ORDER" Name="Ürün Tanımı" />
+          <Column Table="VWARGE_ORDER" Name="Boyama Şekli" />
+          <Column Table="VWARGE_ORDER" Name="Ambalaj Şekli" />
+          <Column Table="VWARGE_ORDER" Name="EVRAKTIP" />
+          <Column Table="VWARGE_ORDER" Name="Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kullanılan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Sevk Miktar" />
+          <Column Table="VWARGE_ORDER" Name="Kalan Miktar" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSEKLI" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMSIPARISNO" />
+          <Column Table="VWARGE_ORDER" Name="TEXSPK_URETIMTIP" />
+          <Column Table="VWARGE_SEVKIYAT" Name="Evrak Tarih" Alias="VWARGE_SEVKIYAT_Evrak Tarih" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="Sipariş_Onay">
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="ID" Type="Int32" />
+            <Field Name="VWARGE_CONFIRM_KALEMSN" Type="Int32" />
+            <Field Name="SIRANO" Type="Int16" />
+            <Field Name="ONAYDURUM" Type="Int16" />
+            <Field Name="ONAYKULLANICI" Type="String" />
+            <Field Name="ONAYTARIH" Type="DateTime" />
+            <Field Name="ONAYSAAT" Type="DateTime" />
+            <Field Name="ACIKLAMA" Type="String" />
+            <Field Name="VWARGE_CONFIRM_GIRENKULLANICI" Type="String" />
+            <Field Name="GIRENTARIH" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENKAYNAK" Type="String" />
+            <Field Name="GIRENSURUM" Type="String" />
+            <Field Name="VWARGE_CONFIRM_DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENTARIH" Type="DateTime" />
+            <Field Name="VWARGE_CONFIRM_DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="DEGISTIRENKAYNAK" Type="String" />
+            <Field Name="DEGISTIRENSURUM" Type="String" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="VWARGE_CONFIRM_Onay Tipi" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Fiyat" Type="Decimal" />
+            <Field Name="Döviz" Type="String" />
+          </View>
+          <View Name="Siparişler">
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Fiyat" Type="Decimal" />
+            <Field Name="Döviz" Type="String" />
+            <Field Name="Stok Miktar" Type="Decimal" />
+            <Field Name="Tölerasnlı Stok Miktar" Type="Decimal" />
+            <Field Name="Üretim Durumu" Type="String" />
+          </View>
+          <View Name="Reçeteler">
+            <Field Name="EVRAKNO" Type="String" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="EVRAKSN" Type="Int32" />
+            <Field Name="Ekru Reçete Durumu" Type="String" />
+            <Field Name="Renkli Reçete Durumu" Type="String" />
+            <Field Name="_RECETENO" Type="String" />
+            <Field Name="_SIPRECETENO" Type="String" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="VWARGE_ORDER_KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="ID" Type="Int32" />
+            <Field Name="Ana Seviye" Type="String" />
+            <Field Name="Seviye" Type="String" />
+            <Field Name="Reçete No" Type="String" />
+            <Field Name="Boyama İşlemi" Type="String" />
+            <Field Name="Seviye Türü" Type="String" />
+            <Field Name="VWARGE_RECIPE_ORDER_Malzeme Kodu" Type="String" />
+            <Field Name="VWARGE_RECIPE_ORDER_Malzeme Adı" Type="String" />
+            <Field Name="VWARGE_RECIPE_ORDER_Renk Kodu" Type="String" />
+            <Field Name="VWARGE_RECIPE_ORDER_Renk Adı" Type="String" />
+            <Field Name="VWARGE_RECIPE_ORDER_Miktar" Type="Decimal" />
+            <Field Name="Fire(%)" Type="Decimal" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_ID" Type="Int32" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Üretim Yeri" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Ana Seviye" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Seviye" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Reçete No" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Boyama İşlemi" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Seviye Türü" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Renk Adı" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Renk Kodu" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Malzeme Kodu" Type="String" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Malzeme Adı" Type="String" />
+            <Field Name="Miktar(%)" Type="Decimal" />
+            <Field Name="VWARGE_RECIPE_PRODUCT_Fire(%)" Type="Decimal" />
+          </View>
+          <View Name="MRP_Sipariş_Bağlantı">
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="_PLANMIKTAR" Type="Decimal" />
+            <Field Name="MIKTAR" Type="Decimal" />
+            <Field Name="_SIPKALANMIKTAR" Type="Decimal" />
+            <Field Name="EVRAKNO" Type="String" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="HESAPKOD" Type="String" />
+            <Field Name="EVRAKSN" Type="Int32" />
+            <Field Name="TEXSPK_ALTMUSTERI" Type="String" />
+            <Field Name="TEXSPK_ANAMUSTERI" Type="String" />
+            <Field Name="VWARGE_ORDER_Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="VWARGE_ORDER_KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="_TEKSTILONAY" Type="Int16" />
+            <Field Name="_FANTAZIONAY" Type="Int16" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Üretim Durumu" Type="String" />
+          </View>
+          <View Name="MRP_EVRAK">
+            <Field Name="MRP Evrak Durum" Type="String" />
+            <Field Name="EVRAKNO" Type="String" />
+            <Field Name="KalemSN" Type="Int32" />
+            <Field Name="Sipariş_No" Type="String" />
+            <Field Name="kalite" Type="String" />
+            <Field Name="EVRAKTARIH" Type="DateTime" />
+            <Field Name="DUZENLEMEZAMAN" Type="DateTime" />
+            <Field Name="SIRANO" Type="Int32" />
+            <Field Name="MALKOD" Type="String" />
+            <Field Name="MIKTAR" Type="Decimal" />
+            <Field Name="KULLANILANMIKTAR" Type="Decimal" />
+            <Field Name="SEVKMIKTAR" Type="Decimal" />
+            <Field Name="_KALANMIKTAR" Type="Decimal" />
+            <Field Name="DEGISTIREN_KULLANICI" Type="String" />
+            <Field Name="DEGISTIREN_TARIH" Type="DateTime" />
+            <Field Name="GIREN_KULLANICI" Type="String" />
+            <Field Name="TEXSPK_ID" Type="Int32" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="VWARGE_MRP_KALEM_MRP Evrak Durum" Type="String" />
+            <Field Name="VWARGE_MRP_KALEM_EVRAKTARIH" Type="DateTime" />
+            <Field Name="VWARGE_MRP_KALEM_DUZENLEMEZAMAN" Type="DateTime" />
+            <Field Name="VWARGE_MRP_KALEM_EVRAKNO" Type="String" />
+            <Field Name="VWARGE_MRP_KALEM_SIRANO" Type="Int32" />
+            <Field Name="VWARGE_MRP_KALEM_KalemSN" Type="Int32" />
+            <Field Name="VWARGE_MRP_KALEM_Sipariş_No" Type="String" />
+            <Field Name="VWARGE_MRP_KALEM_kalite" Type="String" />
+            <Field Name="VWARGE_MRP_KALEM_MALKOD" Type="String" />
+            <Field Name="MRP(%)" Type="Decimal" />
+            <Field Name="FİRE(%)" Type="Decimal" />
+            <Field Name="VWARGE_MRP_KALEM_MIKTAR" Type="Decimal" />
+            <Field Name="VWARGE_MRP_KALEM_KULLANILANMIKTAR" Type="Decimal" />
+            <Field Name="VWARGE_MRP_KALEM_SEVKMIKTAR" Type="Decimal" />
+            <Field Name="VWARGE_MRP_KALEM__KALANMIKTAR" Type="Decimal" />
+            <Field Name="BKOD1" Type="Int16" />
+            <Field Name="VWARGE_MRP_KALEM_DEGISTIREN_KULLANICI" Type="String" />
+            <Field Name="VWARGE_MRP_KALEM_DEGISTIREN_TARIH" Type="DateTime" />
+            <Field Name="VWARGE_MRP_KALEM_GIREN_KULLANICI" Type="String" />
+            <Field Name="VWARGE_MRP_KALEM_TEXSPK_ID" Type="Int32" />
+            <Field Name="Lokasyon" Type="String" />
+            <Field Name="MRP Tipi" Type="String" />
+            <Field Name="MRP KalemSN" Type="Int32" />
+            <Field Name="VWARGE_MRP_KALEM_Renk Kodu" Type="String" />
+            <Field Name="Arge Evrak Durum" Type="String" />
+            <Field Name="Üretim Durumu" Type="String" />
+          </View>
+          <View Name="MRP_KALEM">
+            <Field Name="MRP Evrak Durum" Type="String" />
+            <Field Name="EVRAKTARIH" Type="DateTime" />
+            <Field Name="DUZENLEMEZAMAN" Type="DateTime" />
+            <Field Name="EVRAKNO" Type="String" />
+            <Field Name="SIRANO" Type="Int32" />
+            <Field Name="KalemSN" Type="Int32" />
+            <Field Name="Sipariş_No" Type="String" />
+            <Field Name="kalite" Type="String" />
+            <Field Name="MALKOD" Type="String" />
+            <Field Name="MRP(%)" Type="Decimal" />
+            <Field Name="FİRE(%)" Type="Decimal" />
+            <Field Name="MIKTAR" Type="Decimal" />
+            <Field Name="KULLANILANMIKTAR" Type="Decimal" />
+            <Field Name="SEVKMIKTAR" Type="Decimal" />
+            <Field Name="_KALANMIKTAR" Type="Decimal" />
+            <Field Name="DEGISTIREN_KULLANICI" Type="String" />
+            <Field Name="DEGISTIREN_TARIH" Type="DateTime" />
+            <Field Name="GIREN_KULLANICI" Type="String" />
+            <Field Name="TEXSPK_ID" Type="Int32" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="Lokasyon" Type="String" />
+            <Field Name="MRP Tipi" Type="String" />
+            <Field Name="Sipariş SN" Type="Decimal" />
+          </View>
+          <View Name="İş_Emri_Bağlantı">
+            <Field Name="MRP Evrak Durum" Type="String" />
+            <Field Name="EVRAKTARIH" Type="DateTime" />
+            <Field Name="DUZENLEMEZAMAN" Type="DateTime" />
+            <Field Name="EVRAKNO" Type="String" />
+            <Field Name="SIRANO" Type="Int32" />
+            <Field Name="KalemSN" Type="Int32" />
+            <Field Name="Sipariş_No" Type="String" />
+            <Field Name="kalite" Type="String" />
+            <Field Name="MALKOD" Type="String" />
+            <Field Name="MRP(%)" Type="Decimal" />
+            <Field Name="FİRE(%)" Type="Decimal" />
+            <Field Name="MIKTAR" Type="Decimal" />
+            <Field Name="KULLANILANMIKTAR" Type="Decimal" />
+            <Field Name="SEVKMIKTAR" Type="Decimal" />
+            <Field Name="_KALANMIKTAR" Type="Decimal" />
+            <Field Name="BKOD1" Type="Int16" />
+            <Field Name="DEGISTIREN_KULLANICI" Type="String" />
+            <Field Name="DEGISTIREN_TARIH" Type="DateTime" />
+            <Field Name="GIREN_KULLANICI" Type="String" />
+            <Field Name="TEXSPK_ID" Type="Int32" />
+            <Field Name="Lokasyon" Type="String" />
+            <Field Name="MRP Tipi" Type="String" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="VWARGE_MRP_KALEM_GIRENSAAT" Type="DateTime" />
+            <Field Name="MRP KalemSN" Type="Int32" />
+            <Field Name="Üretim Durumu" Type="String" />
+          </View>
+          <View Name="IS_EMRI">
+            <Field Name="ACIKLAMA" Type="String" />
+            <Field Name="Refakart No" Type="String" />
+            <Field Name="Sipariş No" Type="String" />
+            <Field Name="Lokasyon" Type="String" />
+            <Field Name="MRP Tipi" Type="String" />
+            <Field Name="EVRAKTARIH" Type="DateTime" />
+            <Field Name="MALKOD" Type="String" />
+            <Field Name="MIKTAR" Type="Decimal" />
+            <Field Name="KULLANILANMIKTAR" Type="Decimal" />
+            <Field Name="_KALANMIKTAR" Type="Decimal" />
+            <Field Name="Evrak Durum" Type="String" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENTARIH" Type="DateTime" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="NKOD5" Type="Decimal" />
+            <Field Name="PROJEKOD" Type="String" />
+            <Field Name="MRP No" Type="String" />
+            <Field Name="SONKAYNAKEVRAKTARIH" Type="DateTime" />
+            <Field Name="SONKAYNAKEVRAKTIP" Type="Int16" />
+            <Field Name="SONKAYNAKSIRANO" Type="Int32" />
+            <Field Name="TEXSHB_GMIKTAR" Type="Decimal" />
+            <Field Name="TEXSHB_CMIKTAR" Type="Decimal" />
+            <Field Name="ISMERKEZAD" Type="String" />
+            <Field Name="EVRAKNO" Type="String" />
+            <Field Name="OPERASYONNO" Type="Int16" />
+            <Field Name="ISMERKEZKOD" Type="String" />
+            <Field Name="VWARGE_PROCESS_ACIKLAMA" Type="String" />
+            <Field Name="OPBITTARIHSAAT" Type="DateTime" />
+            <Field Name="OPBASTARIHSAAT" Type="DateTime" />
+            <Field Name="NKOD1" Type="Decimal" />
+            <Field Name="NKOD2" Type="Decimal" />
+            <Field Name="NKOD3" Type="Decimal" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="VWARGE_ORDER_GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="VWARGE_ORDER_GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="VWARGE_ORDER_KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="RENKKOD" Type="String" />
+            <Field Name="MALAD" Type="String" />
+            <Field Name="LKOD2" Type="String" />
+            <Field Name="Üretim Durumu" Type="String" />
+          </View>
+          <View Name="Lead Time">
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="VWARGE_LEAD_TIME_KALEMSN" Type="Int32" />
+            <Field Name="TBASTARIH" Type="DateTime" />
+            <Field Name="TBITTARIH" Type="DateTime" />
+            <Field Name="BBASTARIH" Type="DateTime" />
+            <Field Name="BBITTARIH" Type="DateTime" />
+            <Field Name="FBASTARIH" Type="DateTime" />
+            <Field Name="FBITTARIH" Type="DateTime" />
+            <Field Name="ILKYUKLEME" Type="DateTime" />
+            <Field Name="SONYUKLEME" Type="DateTime" />
+            <Field Name="VWARGE_LEAD_TIME_GIRENKULLANICI" Type="String" />
+            <Field Name="VWARGE_LEAD_TIME_GIRENSAAT" Type="DateTime" />
+            <Field Name="SIPARISSN" Type="Int32" />
+            <Field Name="Depo Giriş" Type="Decimal" />
+            <Field Name="Depo Çıkış" Type="Decimal" />
+            <Field Name="Sevkiyat" Type="Decimal" />
+            <Field Name="ILK_YUKLEME" Type="DateTime" />
+            <Field Name="SON_YUKLEME" Type="DateTime" />
+          </View>
+          <View Name="Sevkiyat">
+            <Field Name="Refakat No" Type="String" />
+            <Field Name="Evrak SN" Type="Int32" />
+            <Field Name="Evrak No" Type="String" />
+            <Field Name="Sipariş KalemSN" Type="Int32" />
+            <Field Name="Brüt Miktar" Type="Decimal" />
+            <Field Name="Net Miktar" Type="Decimal" />
+            <Field Name="Ambalaj Adeti" Type="Decimal" />
+            <Field Name="Bobin Sayısı" Type="Decimal" />
+            <Field Name="İplik No Tür" Type="String" />
+            <Field Name="Görünüm" Type="String" />
+            <Field Name="İplik Türü" Type="String" />
+            <Field Name="Sipariş No" Type="String" />
+            <Field Name="Renk Kodu" Type="String" />
+            <Field Name="Renk Adı" Type="String" />
+            <Field Name="Müşteri" Type="String" />
+            <Field Name="Sevk Adresi" Type="String" />
+            <Field Name="Sevk Adresi Kodu" Type="String" />
+            <Field Name="Gruplar" Type="String" />
+            <Field Name="Üretim Yeri" Type="String" />
+            <Field Name="Evrak Durumu" Type="String" />
+            <Field Name="Onay Şekli" Type="String" />
+            <Field Name="Değişiklik" Type="String" />
+            <Field Name="Sipariş Türü" Type="String" />
+            <Field Name="Sipariş Tipi" Type="String" />
+            <Field Name="Onay Tipi" Type="String" />
+            <Field Name="Onay Durumu" Type="String" />
+            <Field Name="Onay Tarihi" Type="DateTime" />
+            <Field Name="GIRENKULLANICI" Type="String" />
+            <Field Name="VWARGE_ORDER_Evrak No" Type="String" />
+            <Field Name="Evrak Tarih" Type="DateTime" />
+            <Field Name="DEGISTIRENKULLANICI" Type="String" />
+            <Field Name="DEGISTIRENSAAT" Type="DateTime" />
+            <Field Name="GIRENSAAT" Type="DateTime" />
+            <Field Name="Sıra No" Type="Int32" />
+            <Field Name="KALEMSN" Type="Int32" />
+            <Field Name="İçerik" Type="String" />
+            <Field Name="TARIH2" Type="DateTime" />
+            <Field Name="Fiyat" Type="Decimal" />
+            <Field Name="Döviz" Type="String" />
+            <Field Name="Ödeme Şekli" Type="String" />
+            <Field Name="VWARGE_ORDER_Üretim Yeri" Type="String" />
+            <Field Name="VWARGE_ORDER_Müşteri" Type="String" />
+            <Field Name="Müşteri Kısa Ad" Type="String" />
+            <Field Name="Proje Kodu" Type="String" />
+            <Field Name="Malzeme Kodu" Type="String" />
+            <Field Name="Malzeme Adı" Type="String" />
+            <Field Name="VWARGE_ORDER_Renk Kodu" Type="String" />
+            <Field Name="VWARGE_ORDER_Renk Adı" Type="String" />
+            <Field Name="Renk Grubu" Type="String" />
+            <Field Name="Malzeme Kodu-2" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Boyama Şekli" Type="String" />
+            <Field Name="Ambalaj Şekli" Type="String" />
+            <Field Name="EVRAKTIP" Type="Int16" />
+            <Field Name="Miktar" Type="Decimal" />
+            <Field Name="Kullanılan Miktar" Type="Decimal" />
+            <Field Name="Sevk Miktar" Type="Decimal" />
+            <Field Name="Kalan Miktar" Type="Decimal" />
+            <Field Name="TEXSPK_URETIMSEKLI" Type="Int16" />
+            <Field Name="TEXSPK_URETIMSIPARISNO" Type="String" />
+            <Field Name="TEXSPK_URETIMTIP" Type="Int16" />
+            <Field Name="VWARGE_SEVKIYAT_Evrak Tarih" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="ISEMRI_Kalan_Miktar_Check" Expression="[MIKTAR]=[_KALANMIKTAR]" DataType="Auto"
+                         DataMember="İş_Emri_Bağlantı" />
+        <CalculatedField Name="ISEMRI_Devam_Eden_Check" Expression="[_KALANMIKTAR] &lt; [MIKTAR]" DataType="Auto"
+                         DataMember="İş_Emri_Bağlantı" />
+        <CalculatedField Name="Hesaplanan alan 1" Expression="Sum([Net Miktar])" DataType="Auto" DataMember="Sevkiyat" />
+        <CalculatedField Name="Stok" Expression="Iif(IsNullOrEmpty([Depo Giriş]) = true, 0,[Depo Giriş]) "
+                         DataType="Auto" DataMember="Lead Time" />
+        <CalculatedField Name="Tölerans_Büyük"
+                         Expression="Iif(IsNullOrEmpty([Depo Giriş]) = true, 0,[Depo Giriş]*1.25) " DataType="Auto"
+                         DataMember="Lead Time" />
+        <CalculatedField Name="Hesaplanan alan 2"
+                         Expression="Iif(IsNullOrEmpty([TEXSHB_GMIKTAR]) = true, 0,[TEXSHB_GMIKTAR]) &#xA;"
+                         DataType="Auto" DataMember="IS_EMRI" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="Year" Type="System.Int32" AllowMultiselect="true" Description="Yıl">
+      <StaticListLookUpSettings>
+        <Values>
+          <Value>2021</Value>
+          <Value>2020</Value>
+          <Value>2019</Value>
+          <Value>2018</Value>
+          <Value>2017</Value>
+          <Value>2016</Value>
+          <Value>2015</Value>
+        </Values>
+      </StaticListLookUpSettings>
+    </Parameter>
+    <Parameter Name="EvrakDurum" AllowMultiselect="true" Description="Evrak Durumu">
+      <StaticListLookUpSettings>
+        <Values>
+          <Value>Açık</Value>
+          <Value>Kapalı</Value>
+        </Values>
+      </StaticListLookUpSettings>
+    </Parameter>
+    <Parameter Name="UretimDurum" AllowMultiselect="true" Description="Üretim Durumu">
+      <StaticListLookUpSettings>
+        <Values>
+          <Value>Açık</Value>
+          <Value>Kapalı</Value>
+        </Values>
+      </StaticListLookUpSettings>
+    </Parameter>
+  </Parameters>
+  <Items>
+    <Grid ComponentName="gridDashboardItem14" Name="MRP Bekleyenler" DataSource="dashboardSqlDataSource1"
+          DataMember="MRP_Sipariş_Bağlantı" FilterString="[DataItem7] = 0.000000m And [DataItem8] = 'Açık'">
+      <DataItems>
+        <Dimension DataMember="Evrak No" DefaultId="DataItem0" />
+        <Dimension DataMember="Malzeme Adı" DefaultId="DataItem2" />
+        <Dimension DataMember="Miktar" DefaultId="DataItem3">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="Renk Kodu" DefaultId="DataItem4" />
+        <Dimension DataMember="Renk Adı" DefaultId="DataItem5" />
+        <Dimension DataMember="Evrak Tarih" Name="Sipariş Tarihi" SortOrder="Descending"
+                   DateTimeGroupInterval="DateHourMinute" DefaultId="DataItem6" />
+        <Dimension DataMember="_PLANMIKTAR" DefaultId="DataItem7" />
+        <Dimension DataMember="Müşteri Kısa Ad" DefaultId="DataItem1" />
+        <Dimension DataMember="KALEMSN" Name="KSN" DefaultId="DataItem9">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="Üretim Durumu" DefaultId="DataItem8" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem7" />
+        <Dimension DefaultId="DataItem8" />
+      </HiddenDimensions>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" ApplyToRow="true" DataItemApplyTo="DataItem0">
+          <FormatConditionExpression Expression="[DataItem0] Is Not Null">
+            <AppearanceSettings AppearanceType="PaleRed" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="69.072262790022563">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="33.549384783725245">
+          <Dimension DefaultId="DataItem9" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="71.703587086785319">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="73.6770803093574">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="78.281897828692237">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="57.889134528780808">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="73.6770803093574">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="41.443357674013534">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <Grid ComponentName="gridDashboardItem13" Name="MRP Devam Edenler" DataSource="dashboardSqlDataSource1"
+          DataMember="MRP_Sipariş_Bağlantı"
+          FilterString="[DataItem8] &gt; 0.000000m And [DataItem7] &gt; 0.000000m And [DataItem9] = 'Açık' And [DataItem11] = 'Açık'">
+      <DataItems>
+        <Dimension DataMember="Evrak No" DefaultId="DataItem0" />
+        <Dimension DataMember="Malzeme Adı" DefaultId="DataItem2" />
+        <Dimension DataMember="Miktar" DefaultId="DataItem3">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="Renk Kodu" DefaultId="DataItem4" />
+        <Dimension DataMember="Renk Adı" DefaultId="DataItem5" />
+        <Dimension DataMember="Evrak Tarih" Name="Sipariş Tarihi" SortOrder="Descending"
+                   DateTimeGroupInterval="DateHourMinute" DefaultId="DataItem6" />
+        <Dimension DataMember="Müşteri Kısa Ad" Name="Müşteri" DefaultId="DataItem1" />
+        <Dimension DataMember="_SIPKALANMIKTAR" Name="Kalan Miktar" DefaultId="DataItem8">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="Evrak Durumu" Name="MRP Evrak Durumu" DefaultId="DataItem9" />
+        <Dimension DataMember="_PLANMIKTAR" Name="Planlanan Miktar" DefaultId="DataItem7">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="KALEMSN" Name="KSN" DefaultId="DataItem10">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Dimension>
+        <Dimension DataMember="Üretim Durumu" DefaultId="DataItem11" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem9" />
+        <Dimension DefaultId="DataItem7" />
+        <Dimension DefaultId="DataItem11" />
+      </HiddenDimensions>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItemApplyTo="DataItem8">
+          <FormatConditionExpression Expression="[DataItem0] Is Not Null">
+            <AppearanceSettings AppearanceType="Red" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="59.081829397478288">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="42.812919853245134">
+          <Dimension DefaultId="DataItem10" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="72.781963750516724">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="62.506862985737889">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="89.050873294749877">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="81.344547721165753">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="47.950470235634548">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="43.669178250310033">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="62.506862985737889">
+          <Dimension DefaultId="DataItem8" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <ListBox ComponentName="listBoxDashboardItem6" Name="İşletme" DataSource="dashboardSqlDataSource1"
+             DataMember="MRP_Sipariş_Bağlantı" IsMasterFilterCrossDataSource="true">
+      <DataItems>
+        <Dimension DataMember="Üretim Yeri" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem7" Name="Sipariş Türü" DataSource="dashboardSqlDataSource1"
+             DataMember="MRP_Sipariş_Bağlantı" IsMasterFilterCrossDataSource="true">
+      <DataItems>
+        <Dimension DataMember="Sipariş Türü" Name="Sipariş Tipi" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Grid ComponentName="gridDashboardItem20" Name="Planlanan MRP Siparişleri" DataSource="dashboardSqlDataSource1"
+          DataMember="MRP_EVRAK" FilterString="[DataItem4] = 'Açık' And [DataItem10] = 'Açık'">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="DUZENLEMEZAMAN" Name="MRP Tarih" SortOrder="Descending"
+                   DateTimeGroupInterval="DateHourMinute" DefaultId="DataItem0" />
+        <Dimension DataMember="Sipariş_No" Name="Sipariş No" DefaultId="DataItem1" />
+        <Dimension DataMember="Malzeme Adı" DefaultId="DataItem2" />
+        <Dimension DataMember="Evrak Durumu" DefaultId="DataItem4" />
+        <Dimension DataMember="Boyama Şekli" Name="Boyama" DefaultId="DataItem5" />
+        <Dimension DataMember="MIKTAR" Name="Miktar" DefaultId="DataItem6">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="EVRAKNO" Name="MRP No" DefaultId="DataItem7" />
+        <Dimension DataMember="Müşteri Kısa Ad" Name="Müşteri" DefaultId="DataItem8" />
+        <Dimension DataMember="_KALANMIKTAR" Name="Kalan" DefaultId="DataItem11">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="Sipariş Türü" DefaultId="DataItem12" />
+        <Dimension DataMember="KalemSN" Name="KSN" DefaultId="DataItem3">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="Renk Kodu" DefaultId="DataItem9" />
+        <Dimension DataMember="Arge Evrak Durum" Name="Durum" DefaultId="DataItem13" />
+        <Dimension DataMember="Üretim Durumu" DefaultId="DataItem10" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem4" />
+        <Dimension DefaultId="DataItem12" />
+        <Dimension DefaultId="DataItem10" />
+      </HiddenDimensions>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" ApplyToRow="true" DataItemApplyTo="DataItem0">
+          <FormatConditionExpression Expression="IsOutlookIntervalYesterday([DataItem0])">
+            <AppearanceSettings AppearanceType="PaleYellow" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 2" ApplyToRow="true" DataItemApplyTo="DataItem0">
+          <FormatConditionExpression Expression="IsOutlookIntervalToday([DataItem0])">
+            <AppearanceSettings AppearanceType="PaleGreen" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 3" DataItemApplyTo="DataItem13">
+          <FormatConditionExpression Expression="[DataItem13] = 'Kapalı'">
+            <AppearanceSettings AppearanceType="Green" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 4" DataItemApplyTo="DataItem13">
+          <FormatConditionExpression Expression="[DataItem13] = 'Yarı Açık'">
+            <IconSettings IconType="IndicatorCircledRedCross" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="87.598556778562326">
+          <Dimension DefaultId="DataItem0" />
+          <Totals>
+            <Total />
+          </Totals>
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="83.16318681509081">
+          <Dimension DefaultId="DataItem13" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="62.095179488601133">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="68.7482344338084">
+          <Dimension DefaultId="DataItem7" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="62.095179488601133">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="72.074761906412036">
+          <Dimension DefaultId="DataItem8" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="111.99309157765562">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="56.550967034261745">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="72.074761906412036">
+          <Dimension DefaultId="DataItem9" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="72.074761906412036">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="66.530549452072648">
+          <Dimension DefaultId="DataItem11" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <ListBox ComponentName="listBoxDashboardItem8" Name="Boyama Şekli" DataSource="dashboardSqlDataSource1"
+             DataMember="MRP_Sipariş_Bağlantı" IsMasterFilterCrossDataSource="true">
+      <DataItems>
+        <Dimension DataMember="Boyama Şekli" SortOrder="Descending" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Grid ComponentName="gridDashboardItem22" Name="MRP Kalemleri" DataSource="dashboardSqlDataSource1"
+          DataMember="MRP_EVRAK">
+      <DataItems>
+        <Dimension DataMember="MRP KalemSN" Name="KSN" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="VWARGE_MRP_KALEM_MALKOD" Name="KOD" DefaultId="DataItem1" />
+        <Dimension DataMember="VWARGE_MRP_KALEM_kalite" Name="Ad" DefaultId="DataItem2" />
+        <Dimension DataMember="MRP(%)" DefaultId="DataItem3">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="FİRE(%)" Name="Fire(%)" DefaultId="DataItem4">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="VWARGE_MRP_KALEM_MIKTAR" Name="Miktar" DefaultId="DataItem5">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="VWARGE_MRP_KALEM__KALANMIKTAR" Name="Kalan" DefaultId="DataItem6">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="MRP Tipi" DefaultId="DataItem7" />
+        <Dimension DataMember="Lokasyon" DefaultId="DataItem8" />
+        <Dimension DataMember="VWARGE_MRP_KALEM_Renk Kodu" Name="Renk Kodu" DefaultId="DataItem9" />
+        <Dimension DataMember="VWARGE_MRP_KALEM_MRP Evrak Durum" DefaultId="DataItem10" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" ApplyToRow="true" DataItemApplyTo="DataItem0">
+          <FormatConditionExpression Expression="[DataItem7] = 'Sipariş'">
+            <AppearanceSettings AppearanceType="Orange" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 2" ApplyToRow="true" DataItemApplyTo="DataItem0">
+          <FormatConditionExpression Expression="[DataItem7] = 'Reçete'">
+            <AppearanceSettings AppearanceType="PaleOrange" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="31.625260022692881">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="49.696837178517384">
+          <Dimension DefaultId="DataItem10" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="57.829046898638417">
+          <Dimension DefaultId="DataItem7" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="55.118310325264744">
+          <Dimension DefaultId="DataItem8" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="51.503994894099847">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="108.42946293494704">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="46.986100605143712">
+          <Dimension DefaultId="DataItem9" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="45.178942889561263">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="48.79325832072616">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="55.118310325264744">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="56.925468040847193">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <ListBox ComponentName="listBoxDashboardItem9" Name="MRP Evrak Durum" DataSource="dashboardSqlDataSource1"
+             DataMember="MRP_EVRAK">
+      <DataItems>
+        <Dimension DataMember="MRP Evrak Durum" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem19" Name="Kullanıcı" DataSource="dashboardSqlDataSource1"
+             DataMember="MRP_EVRAK">
+      <DataItems>
+        <Dimension DataMember="GIREN_KULLANICI" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <DateFilter ComponentName="dateFilterDashboardItem3" Name="Planlanan MRP Tarihi"
+                DataSource="dashboardSqlDataSource1" DataMember="MRP_EVRAK">
+      <DataItems>
+        <Dimension DataMember="DUZENLEMEZAMAN" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+      </DataItems>
+      <Dimension DefaultId="DataItem0" />
+      <DateTimePeriods>
+        <DateTimePeriod Name="Bugün">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Day" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Day" Offset="1" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Dün">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Day" Offset="-1" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Day" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Son 7 Gün">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Day" Offset="-7" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Day" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Bu ay">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="1" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Geçen ay">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="-1" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </EndLimit>
+        </DateTimePeriod>
+        <DateTimePeriod Name="Son 3 ay">
+          <StartLimit>
+            <FlowDateTimePeriodLimit Interval="Month" Offset="-3" />
+          </StartLimit>
+          <EndLimit>
+            <FlowDateTimePeriodLimit Interval="Month" />
+          </EndLimit>
+        </DateTimePeriod>
+      </DateTimePeriods>
+    </DateFilter>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutGroup Weight="20.365853658536587">
+        <LayoutItem DashboardItem="dateFilterDashboardItem3" Weight="18.96551724137931" />
+        <LayoutItem DashboardItem="listBoxDashboardItem9" Weight="13.461538461538462" />
+        <LayoutItem DashboardItem="listBoxDashboardItem7" Weight="11.87002652519894" />
+        <LayoutItem DashboardItem="listBoxDashboardItem6" Weight="10.809018567639257" />
+        <LayoutItem DashboardItem="listBoxDashboardItem8" Weight="20.755968169761275" />
+        <LayoutItem DashboardItem="listBoxDashboardItem19" Weight="24.137931034482758" />
+      </LayoutGroup>
+      <LayoutGroup Orientation="Vertical" Weight="79.634146341463421">
+        <LayoutGroup Weight="36.140888208269523">
+          <LayoutItem DashboardItem="gridDashboardItem14" Weight="50" />
+          <LayoutItem DashboardItem="gridDashboardItem13" Weight="50" />
+        </LayoutGroup>
+        <LayoutGroup Weight="63.859111791730477">
+          <LayoutItem DashboardItem="gridDashboardItem20" Weight="50" />
+          <LayoutItem DashboardItem="gridDashboardItem22" Weight="50" />
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

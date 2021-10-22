@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E71F969-E10C-4A01-9CB6-1475D0DF60BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DAL">
+      <HintPath>C:\Users\aaa_ehsan\Desktop\08.01.2020\Boyar_Planlama\BoyArge\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CPM\CPMDashboardParameter.cs" />
+    <Compile Include="CustomObservableCollection.cs" />
+    <Compile Include="Expense Definitions\UnitPrice.cs" />
+    <Compile Include="Expense Definitions\ExpenseLine.cs" />
+    <Compile Include="Firm Definitions\DepartmentRelation.cs" />
+    <Compile Include="Firm Definitions\Department.cs" />
+    <Compile Include="Firm Definitions\DepartmentExpenseRelation.cs" />
+    <Compile Include="Firm Definitions\FirmModel.cs" />
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="Other Definitions\Screen.cs" />
+    <Compile Include="Firm Definitions\Title.cs" />
+    <Compile Include="Format.cs" />
+    <Compile Include="CPM\CPMDatabase.cs" />
+    <Compile Include="CPM\Stock.cs" />
+    <Compile Include="Firm Definitions\Machine.cs" />
+    <Compile Include="Expense Definitions\Expense.cs" />
+    <Compile Include="Other Definitions\ScreenPermission.cs" />
+    <Compile Include="Other Definitions\FollowMeParameters.cs" />
+    <Compile Include="Other Definitions\UnitCostParameter.cs" />
+    <Compile Include="Production Definitions\StockProcessRelation.cs" />
+    <Compile Include="Production Definitions\MachineProcessRelation.cs" />
+    <Compile Include="Production Definitions\ProductionType.cs" />
+    <Compile Include="Production Definitions\ProcessType.cs" />
+    <Compile Include="Other Definitions\ExchangeType.cs" />
+    <Compile Include="Firm Definitions\MachineGroup.cs" />
+    <Compile Include="Other Definitions\Document.cs" />
+    <Compile Include="Stock Definitions\ProductTreeFiche.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Other Definitions\Unit.cs" />
+    <Compile Include="Expense Definitions\ExpenseType.cs" />
+    <Compile Include="Firm Definitions\Zone.cs" />
+    <Compile Include="Firm Definitions\Firm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stock Definitions\ConicType.cs" />
+    <Compile Include="Stock Definitions\ProductTree.cs" />
+    <Compile Include="Stock Definitions\Receipt.cs" />
+    <Compile Include="Stock Definitions\ReceiptLine.cs" />
+    <Compile Include="Stock Definitions\StockFeatureType.cs" />
+    <Compile Include="Stock Definitions\StockGroupRelation.cs" />
+    <Compile Include="Stock Definitions\StockGroup.cs" />
+    <Compile Include="Stock Definitions\StockGroupContent.cs" />
+    <Compile Include="Stock Definitions\StockManagement.cs" />
+    <Compile Include="User Definitions\TableStatus.cs" />
+    <Compile Include="User Definitions\User.cs" />
+    <Compile Include="Production Definitions\Process.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

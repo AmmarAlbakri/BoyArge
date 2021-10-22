@@ -1,0 +1,1172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{367C6A91-20AD-4C84-8781-D22A657D0588}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BoyArge</RootNamespace>
+    <AssemblyName>BoyArge</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>innovation.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Business\bin\Debug\Business.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL">
+      <HintPath>.\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v20.1.Win, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Win, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIns\GridViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\GridViewerForm.Designer.cs">
+      <DependentUpon>GridViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\WaitFormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\WaitFormTest.Designer.cs">
+      <DependentUpon>WaitFormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASLAT_BITIR\ProcessWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASLAT_BITIR\ProcessWorkOrder.Designer.cs">
+      <DependentUpon>ProcessWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ana Ekranlar\CalculateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ana Ekranlar\CalculateForm.Designer.cs">
+      <DependentUpon>CalculateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\ConfirmSystem\ConfirmSystemDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\ConfirmSystem\ConfirmSystemDashboard.Designer.cs">
+      <DependentUpon>ConfirmSystemDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\MRP\MRPDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\MRP\MRPDashboard.Designer.cs">
+      <DependentUpon>MRPDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Orders\OrdersDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Orders\OrdersDashboard.Designer.cs">
+      <DependentUpon>OrdersDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Preview\PreviewDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Preview\PreviewDashboard.Designer.cs">
+      <DependentUpon>PreviewDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\ProductionOrder\ProductionOrderDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\ProductionOrder\ProductionOrderDashboard.Designer.cs">
+      <DependentUpon>ProductionOrderDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\ReceiptStatus\ReceiptStatusDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\ReceiptStatus\ReceiptStatusDashboard.Designer.cs">
+      <DependentUpon>ReceiptStatusDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Shipment\ShipmentDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Shipment\ShipmentDashboard.Designer.cs">
+      <DependentUpon>ShipmentDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Termin\TerminDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\Termin\TerminDashboard.Designer.cs">
+      <DependentUpon>TerminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPM_Dashboards\CPMDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPM_Dashboards\CPMDashboardForm.Designer.cs">
+      <DependentUpon>CPMDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbArgeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbArgeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="deneme5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deneme5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsModule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsModule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\PDFViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\PDFViewerForm.Designer.cs">
+      <DependentUpon>PDFViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\SpreadSheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\SpreadSheetForm.Designer.cs">
+      <DependentUpon>SpreadSheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\TextEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\TextEditorForm.Designer.cs">
+      <DependentUpon>TextEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\ucUnitCost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddIns\ucUnitCost.Designer.cs">
+      <DependentUpon>ucUnitCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\DocumentForm.Designer.cs">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ana Ekranlar\FollowMeDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ana Ekranlar\FollowMeDashboardForm.Designer.cs">
+      <DependentUpon>FollowMeDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASLAT_BITIR\StartStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASLAT_BITIR\StartStop.Designer.cs">
+      <DependentUpon>StartStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASLAT_BITIR\ProcessMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BASLAT_BITIR\ProcessMachine.Designer.cs">
+      <DependentUpon>ProcessMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MRP_Baglanti.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MRP_Baglanti.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Planlama\FormPlanlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planlama\FormPlanlama.Designer.cs">
+      <DependentUpon>FormPlanlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planlama\LookUpEditFill.cs" />
+    <Compile Include="Planlama\MamulTree.cs" />
+    <Compile Include="Planlama\Operasyonlar.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sevk_Bekleyenler.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sevk_Bekleyenler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StokKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokKart.Designer.cs">
+      <DependentUpon>StokKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sum_Orders.cs">
+      <DependentUpon>Sum_Orders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sum_Orders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sum_Orders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TEKSTIL_UYGDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TEKSTIL_UYGDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\UnitCostDashboardStaticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\UnitCostDashboardStaticForm.Designer.cs">
+      <DependentUpon>UnitCostDashboardStaticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\UnitCostDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\UnitCostDashboardForm.Designer.cs">
+      <DependentUpon>UnitCostDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicCapacityDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicCapacityDashboard.Designer.cs">
+      <DependentUpon>DynamicCapacityDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicProcessUnitCostDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicProcessUnitCostDashboard.Designer.cs">
+      <DependentUpon>DynamicProcessUnitCostDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicUnitCostDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicUnitCostDashboard.Designer.cs">
+      <DependentUpon>DynamicUnitCostDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicProductUnitCostDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicProductUnitCostDashboard.Designer.cs">
+      <DependentUpon>DynamicProductUnitCostDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicZoneExpenseDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Dynamic\DynamicZoneExpenseDashboard.Designer.cs">
+      <DependentUpon>DynamicZoneExpenseDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticCapacityDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticCapacityDashboard.Designer.cs">
+      <DependentUpon>staticCapacityDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticProcessUnitCostDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticProcessUnitCostDashboard.Designer.cs">
+      <DependentUpon>staticProcessUnitCostDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticProductUnitCostDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticProductUnitCostDashboard.Designer.cs">
+      <DependentUpon>staticProductUnitCostDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticUnitCostDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticUnitCostDashboard.Designer.cs">
+      <DependentUpon>staticUnitCostDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticZoneExpenseDashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnitCost_Dashboards\Static\staticZoneExpenseDashboard.Designer.cs">
+      <DependentUpon>staticZoneExpenseDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\ScreenPermissionEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\ScreenPermissionEditForm.Designer.cs">
+      <DependentUpon>ScreenPermissionEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseLineEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseLineEditForm.Designer.cs">
+      <DependentUpon>ExpenseLineEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\ScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\ScreenForm.Designer.cs">
+      <DependentUpon>ScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\StockProcessRelationEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\StockProcessRelationEditForm.Designer.cs">
+      <DependentUpon>StockProcessRelationEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\DashboardDesignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\DashboardDesignerForm.Designer.cs">
+      <DependentUpon>DashboardDesignerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Forms\DashboardProcessAnalyze.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Forms\DashboardProcessAnalyze.Designer.cs">
+      <DependentUpon>DashboardProcessAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ana Ekranlar\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ana Ekranlar\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\TableStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\TableStatusForm.Designer.cs">
+      <DependentUpon>TableStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\DepartmentExpenseRelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\DepartmentExpenseRelationForm.Designer.cs">
+      <DependentUpon>DepartmentExpenseRelationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Forms\DashboardOrderGraph.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report Forms\DashboardOrderGraph.Designer.cs">
+      <DependentUpon>DashboardOrderGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\DashboardViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\DashboardViewerForm.Designer.cs">
+      <DependentUpon>DashboardViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UnitCostDataEntry\Production Definitions\ChemicalRecipeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ChemicalRecipeForm.Designer.cs">
+      <DependentUpon>ChemicalRecipeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\ConicTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\ConicTypeForm.Designer.cs">
+      <DependentUpon>ConicTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockFeatureTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockFeatureTypeForm.Designer.cs">
+      <DependentUpon>StockFeatureTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockGroupRelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockGroupRelationForm.Designer.cs">
+      <DependentUpon>StockGroupRelationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockGroupForm.Designer.cs">
+      <DependentUpon>StockGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockGroupContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockGroupContentForm.Designer.cs">
+      <DependentUpon>StockGroupContentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\RecipeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\RecipeForm.Designer.cs">
+      <DependentUpon>RecipeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\UnitPriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\UnitPriceForm.Designer.cs">
+      <DependentUpon>UnitPriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseLineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseLineForm.Designer.cs">
+      <DependentUpon>ExpenseLineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\DepartmentRelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\DepartmentRelationForm.Designer.cs">
+      <DependentUpon>DepartmentRelationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\FirmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\FirmForm.Designer.cs">
+      <DependentUpon>FirmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\MachineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\MachineForm.Designer.cs">
+      <DependentUpon>MachineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\MachineGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\MachineGroupForm.Designer.cs">
+      <DependentUpon>MachineGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\TitleForm.Designer.cs">
+      <DependentUpon>TitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\ExchangeTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\ExchangeTypeForm.Designer.cs">
+      <DependentUpon>ExchangeTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\UnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\UnitForm.Designer.cs">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseTypeForm.Designer.cs">
+      <DependentUpon>ExpenseTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\ZoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Firm Definitions\ZoneForm.Designer.cs">
+      <DependentUpon>ZoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ana Ekranlar\UnitCostMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ana Ekranlar\UnitCostMainForm.Designer.cs">
+      <DependentUpon>UnitCostMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\CurrentAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Other Definitions\CurrentAccountForm.Designer.cs">
+      <DependentUpon>CurrentAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Expense Definitions\ExpenseForm.Designer.cs">
+      <DependentUpon>ExpenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\StockProcessRelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\StockProcessRelationForm.Designer.cs">
+      <DependentUpon>StockProcessRelationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\MachineProcessRelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\MachineProcessRelationForm.Designer.cs">
+      <DependentUpon>MachineProcessRelationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Forms\OrderReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Forms\OrderReportForm.Designer.cs">
+      <DependentUpon>OrderReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockDataSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockDataSetForm.Designer.cs">
+      <DependentUpon>StockDataSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Stock Definitions\StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ProcessTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ProcessTypeForm.Designer.cs">
+      <DependentUpon>ProcessTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ProductionTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ProductionTypeForm.Designer.cs">
+      <DependentUpon>ProductionTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AddIns\SplashBoyar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\SplashBoyar.Designer.cs">
+      <DependentUpon>SplashBoyar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ProcessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\Production Definitions\ProcessForm.Designer.cs">
+      <DependentUpon>ProcessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\PasswordChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\PasswordChangeForm.Designer.cs">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\ScreenPermissionGroupUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\ScreenPermissionGroupUpdate.Designer.cs">
+      <DependentUpon>ScreenPermissionGroupUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCostDataEntry\User Definitions\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddIns\GridViewerForm.resx">
+      <DependentUpon>GridViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\WaitFormTest.resx">
+      <DependentUpon>WaitFormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASLAT_BITIR\ProcessWorkOrder.resx">
+      <DependentUpon>ProcessWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Ekranlar\CalculateForm.resx">
+      <DependentUpon>CalculateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\ConfirmSystem\ConfirmSystemDashboard.resx">
+      <DependentUpon>ConfirmSystemDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\MRP\MRPDashboard.resx">
+      <DependentUpon>MRPDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\Orders\OrdersDashboard.resx">
+      <DependentUpon>OrdersDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\Preview\PreviewDashboard.resx">
+      <DependentUpon>PreviewDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\ProductionOrder\ProductionOrderDashboard.resx">
+      <DependentUpon>ProductionOrderDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\ReceiptStatus\ReceiptStatusDashboard.resx">
+      <DependentUpon>ReceiptStatusDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\Shipment\ShipmentDashboard.resx">
+      <DependentUpon>ShipmentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\Termin\TerminDashboard.resx">
+      <DependentUpon>TerminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM_Dashboards\CPMDashboardForm.resx">
+      <DependentUpon>CPMDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\PDFViewerForm.resx">
+      <DependentUpon>PDFViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\SpreadSheetForm.resx">
+      <DependentUpon>SpreadSheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\TextEditorForm.resx">
+      <DependentUpon>TextEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\ucUnitCost.resx">
+      <DependentUpon>ucUnitCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\DocumentForm.resx">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Ekranlar\FollowMeDashboardForm.resx">
+      <DependentUpon>FollowMeDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASLAT_BITIR\StartStop.resx">
+      <DependentUpon>StartStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BASLAT_BITIR\ProcessMachine.resx">
+      <DependentUpon>ProcessMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planlama\FormPlanlama.resx">
+      <DependentUpon>FormPlanlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokKart.resx">
+      <DependentUpon>StokKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Static\staticUnitCostDashboard.resx">
+      <DependentUpon>staticUnitCostDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\UnitCostDashboardStaticForm.resx">
+      <DependentUpon>UnitCostDashboardStaticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\UnitCostDashboardForm.resx">
+      <DependentUpon>UnitCostDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Dynamic\DynamicCapacityDashboard.resx">
+      <DependentUpon>DynamicCapacityDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Dynamic\DynamicProcessUnitCostDashboard.resx">
+      <DependentUpon>DynamicProcessUnitCostDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Dynamic\DynamicUnitCostDashboard.resx">
+      <DependentUpon>DynamicUnitCostDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Dynamic\DynamicProductUnitCostDashboard.resx">
+      <DependentUpon>DynamicProductUnitCostDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Dynamic\DynamicZoneExpenseDashboard.resx">
+      <DependentUpon>DynamicZoneExpenseDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Static\staticCapacityDashboard.resx">
+      <DependentUpon>staticCapacityDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Static\staticProcessUnitCostDashboard.resx">
+      <DependentUpon>staticProcessUnitCostDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Static\staticProductUnitCostDashboard.resx">
+      <DependentUpon>staticProductUnitCostDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCost_Dashboards\Static\staticZoneExpenseDashboard.resx">
+      <DependentUpon>staticZoneExpenseDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\User Definitions\ScreenPermissionEditForm.resx">
+      <DependentUpon>ScreenPermissionEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Expense Definitions\ExpenseLineEditForm.resx">
+      <DependentUpon>ExpenseLineEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Other Definitions\ScreenForm.resx">
+      <DependentUpon>ScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\StockProcessRelationEditForm.resx">
+      <DependentUpon>StockProcessRelationEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\DashboardDesignerForm.resx">
+      <DependentUpon>DashboardDesignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Forms\DashboardProcessAnalyze.resx">
+      <DependentUpon>DashboardProcessAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Ekranlar\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\TableStatusForm.resx">
+      <DependentUpon>TableStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\DepartmentExpenseRelationForm.resx">
+      <DependentUpon>DepartmentExpenseRelationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Forms\DashboardOrderGraph.resx">
+      <DependentUpon>DashboardOrderGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\DashboardViewerForm.resx">
+      <DependentUpon>DashboardViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\ChemicalRecipeForm.resx">
+      <DependentUpon>ChemicalRecipeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\ConicTypeForm.resx">
+      <DependentUpon>ConicTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\StockFeatureTypeForm.resx">
+      <DependentUpon>StockFeatureTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\StockGroupRelationForm.resx">
+      <DependentUpon>StockGroupRelationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\StockGroupForm.resx">
+      <DependentUpon>StockGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\StockGroupContentForm.resx">
+      <DependentUpon>StockGroupContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\RecipeForm.resx">
+      <DependentUpon>RecipeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Expense Definitions\UnitPriceForm.resx">
+      <DependentUpon>UnitPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Expense Definitions\ExpenseLineForm.resx">
+      <DependentUpon>ExpenseLineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\DepartmentRelationForm.resx">
+      <DependentUpon>DepartmentRelationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\FirmForm.resx">
+      <DependentUpon>FirmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\MachineForm.resx">
+      <DependentUpon>MachineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\MachineGroupForm.resx">
+      <DependentUpon>MachineGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\TitleForm.resx">
+      <DependentUpon>TitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Other Definitions\ExchangeTypeForm.resx">
+      <DependentUpon>ExchangeTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Other Definitions\UnitForm.resx">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Expense Definitions\ExpenseTypeForm.resx">
+      <DependentUpon>ExpenseTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Firm Definitions\ZoneForm.resx">
+      <DependentUpon>ZoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Ekranlar\UnitCostMainForm.resx">
+      <DependentUpon>UnitCostMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Other Definitions\CurrentAccountForm.resx">
+      <DependentUpon>CurrentAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Expense Definitions\ExpenseForm.resx">
+      <DependentUpon>ExpenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\StockProcessRelationForm.resx">
+      <DependentUpon>StockProcessRelationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\MachineProcessRelationForm.resx">
+      <DependentUpon>MachineProcessRelationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report Forms\OrderReportForm.resx">
+      <DependentUpon>OrderReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\StockDataSetForm.resx">
+      <DependentUpon>StockDataSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Stock Definitions\StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\User Definitions\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\ProcessTypeForm.resx">
+      <DependentUpon>ProcessTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\ProductionTypeForm.resx">
+      <DependentUpon>ProductionTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\SplashBoyar.resx">
+      <DependentUpon>SplashBoyar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIns\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\Production Definitions\ProcessForm.resx">
+      <DependentUpon>ProcessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\User Definitions\PasswordChangeForm.resx">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\User Definitions\ScreenPermissionGroupUpdate.resx">
+      <DependentUpon>ScreenPermissionGroupUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\User Definitions\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCostDataEntry\User Definitions\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="dbArgeDataSet.xsc">
+      <DependentUpon>dbArgeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbArgeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbArgeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbArgeDataSet.xss">
+      <DependentUpon>dbArgeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="deneme5.xsc">
+      <DependentUpon>deneme5.xsd</DependentUpon>
+    </None>
+    <None Include="deneme5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>deneme5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="deneme5.xss">
+      <DependentUpon>deneme5.xsd</DependentUpon>
+    </None>
+    <None Include="dsModule.xsc">
+      <DependentUpon>dsModule.xsd</DependentUpon>
+    </None>
+    <None Include="dsModule.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsModule.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsModule.xss">
+      <DependentUpon>dsModule.xsd</DependentUpon>
+    </None>
+    <None Include="MRP_Baglanti.xsc">
+      <DependentUpon>MRP_Baglanti.xsd</DependentUpon>
+    </None>
+    <None Include="MRP_Baglanti.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MRP_Baglanti.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MRP_Baglanti.xss">
+      <DependentUpon>MRP_Baglanti.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Business.Document+Recording.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Sevk_Bekleyenler.xsc">
+      <DependentUpon>Sevk_Bekleyenler.xsd</DependentUpon>
+    </None>
+    <None Include="Sevk_Bekleyenler.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sevk_Bekleyenler.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sevk_Bekleyenler.xss">
+      <DependentUpon>Sevk_Bekleyenler.xsd</DependentUpon>
+    </None>
+    <None Include="Sum_Orders.xsc">
+      <DependentUpon>Sum_Orders.xsd</DependentUpon>
+    </None>
+    <None Include="Sum_Orders.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sum_Orders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sum_Orders.xss">
+      <DependentUpon>Sum_Orders.xsd</DependentUpon>
+    </None>
+    <None Include="TEKSTIL_UYGDataSet.xsc">
+      <DependentUpon>TEKSTIL_UYGDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TEKSTIL_UYGDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TEKSTIL_UYGDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TEKSTIL_UYGDataSet.xss">
+      <DependentUpon>TEKSTIL_UYGDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CPM_Dashboards\ConfirmSystem\ConfirmSystem.xml" />
+    <Content Include="CPM_Dashboards\MRP\MRP.xml" />
+    <Content Include="CPM_Dashboards\Orders\Orders.xml" />
+    <Content Include="CPM_Dashboards\Preview\Preview.xml" />
+    <Content Include="CPM_Dashboards\ProductionOrder\ProductionOrder.xml" />
+    <Content Include="CPM_Dashboards\ReceiptStatus\ReceiptStatus.xml" />
+    <Content Include="CPM_Dashboards\Shipment\Shipment.xml" />
+    <Content Include="CPM_Dashboards\Termin\Termin.xml" />
+    <Content Include="favicon.ico" />
+    <Content Include="innovation.ico" />
+    <None Include="Resources\find_16x164.png" />
+    <None Include="Resources\find_16x163.png" />
+    <None Include="Resources\find_16x162.png" />
+    <None Include="Resources\find_16x161.png" />
+    <None Include="Resources\find_16x16.png" />
+    <None Include="Resources\search_16x164.png" />
+    <None Include="Resources\search_16x163.png" />
+    <None Include="Resources\search_16x162.png" />
+    <None Include="Resources\search_16x161.png" />
+    <None Include="Resources\add_16x161.png" />
+    <None Include="Resources\deletelist_16x16.png" />
+    <None Include="Resources\save_16x16.png" />
+    <None Include="Resources\newtask_16x161.png" />
+    <None Include="Resources\newtask_16x16.png" />
+    <None Include="Resources\chartsrotate_16x16.png" />
+    <None Include="Resources\cancel_16x162.png" />
+    <None Include="Resources\cancel_16x161.png" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\close_16x16.png" />
+    <None Include="Resources\bo_validation1.svg" />
+    <None Include="Resources\bo_validation.svg" />
+    <None Include="Resources\open21.svg" />
+    <None Include="Resources\charttype_line1.svg" />
+    <None Include="Resources\charttype_line.svg" />
+    <None Include="Resources\chartopenhighlowclosestock.svg" />
+    <None Include="Resources\addparameter.svg" />
+    <None Include="Resources\preview1.svg" />
+    <None Include="Resources\preview.svg" />
+    <None Include="Resources\chart.svg" />
+    <None Include="Resources\charttype_bubble3d.svg" />
+    <None Include="Resources\morecolors.svg" />
+    <None Include="Resources\cut.svg" />
+    <None Include="Resources\bo_statemachine.svg" />
+    <None Include="Resources\connector.svg" />
+    <None Include="Resources\brush.svg" />
+    <None Include="Resources\alignhorizontalcenter.svg" />
+    <None Include="Resources\categorize1.svg" />
+    <None Include="Resources\chartpoint.svg" />
+    <None Include="Resources\figures4.svg" />
+    <None Include="Resources\palette1.svg" />
+    <None Include="Resources\appointmentnightclock.svg" />
+    <None Include="Resources\color.svg" />
+    <None Include="Resources\bo_appearance.svg" />
+    <None Include="Resources\yellowgreencolorscale.svg" />
+    <None Include="Resources\categorize.svg" />
+    <None Include="Resources\verticallines.svg" />
+    <None Include="Resources\chartgridlinesvertical_minor.svg" />
+    <None Include="Resources\redwhitegreencolorscale1.svg" />
+    <None Include="Resources\bandedrows.svg" />
+    <None Include="Resources\alignverticalright.svg" />
+    <None Include="Resources\alignverticalleft.svg" />
+    <None Include="Resources\alignhorizontaltop.svg" />
+    <None Include="Resources\alignhorizontalbottom.svg" />
+    <None Include="Resources\setheaderrange.svg" />
+    <None Include="Resources\setdetailrange.svg" />
+    <None Include="Resources\setfooterrange.svg" />
+    <None Include="Resources\time2.svg" />
+    <None Include="Resources\time1.svg" />
+    <None Include="Resources\palette.svg" />
+    <None Include="Resources\bo_audit_changehistory4.svg" />
+    <None Include="Resources\bo_audit_changehistory3.svg" />
+    <None Include="Resources\charttype_spline3d1.svg" />
+    <None Include="Resources\charttype_spline3d.svg" />
+    <None Include="Resources\bo_audit_changehistory2.svg" />
+    <None Include="Resources\bo_audit_changehistory1.svg" />
+    <None Include="Resources\bo_audit_changehistory.svg" />
+    <None Include="Resources\redwhitegreencolorscale.svg" />
+    <None Include="Resources\showcaption.svg" />
+    <None Include="Resources\next4.svg" />
+    <None Include="Resources\pause.svg" />
+    <None Include="Resources\time.svg" />
+    <None Include="Resources\calculatenow.svg" />
+    <None Include="Resources\managequeries3.svg" />
+    <None Include="Resources\viewmergeddata1.svg" />
+    <None Include="Resources\pivottablegroupselection.svg" />
+    <None Include="Resources\managequeries2.svg" />
+    <None Include="Resources\dashboarddesigner1.svg" />
+    <None Include="Resources\stackedarea_32x32.png" />
+    <None Include="Resources\stackedarea_16x16.png" />
+    <None Include="Resources\find1.svg" />
+    <None Include="Resources\listsource.svg" />
+    <None Include="Resources\servermode.svg" />
+    <None Include="Resources\viewmergeddata.svg" />
+    <None Include="Resources\insertlistbox.svg" />
+    <None Include="Resources\open2.svg" />
+    <None Include="Resources\shortdate.svg" />
+    <None Include="Resources\exporttoxml.svg" />
+    <None Include="Resources\singlepageview1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report Forms\UnitCost\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.Metrics.3.3.0\build\Microsoft.CodeAnalysis.Metrics.targets" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Metrics.3.3.0\build\Microsoft.CodeAnalysis.Metrics.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Metrics.3.3.0\build\Microsoft.CodeAnalysis.Metrics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Metrics.3.3.0\build\Microsoft.CodeAnalysis.Metrics.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

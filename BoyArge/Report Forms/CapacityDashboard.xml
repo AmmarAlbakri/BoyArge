@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Kontrol paneli" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="dbArgeConnectionString" FromAppConfig="true" />
+      <Query Type="StoredProcQuery" Name="spProcessUnitCost">
+		<Parameter Name="@MainStockCode" Type="DevExpress.DataAccess.Expression">(System.String)(?MainStockCode)</Parameter>
+        <Parameter Name="@StockFeatureTypeID" Type="DevExpress.DataAccess.Expression">(System.Int32)(?StockFeatureType)</Parameter>
+        <Parameter Name="@OrderAmount" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?OrderAmount)</Parameter>
+        <Parameter Name="@RingBobinNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?RingNo)</Parameter>
+        <Parameter Name="@BukumNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?BukumNo)</Parameter>
+        <Parameter Name="@FinalNr" Type="DevExpress.DataAccess.Expression">(System.Decimal)(?FinalNo)</Parameter>
+        <Parameter Name="@Date" Type="DevExpress.DataAccess.Expression">(System.DateTime)(?Date)</Parameter>
+        <Parameter Name="@CapacityType" Type="DevExpress.DataAccess.Expression">(System.Int32)(?CapacityType)</Parameter>
+        <Parameter Name="@CalculateType" Type="DevExpress.DataAccess.Expression">(System.Boolean)(?CalculateType)</Parameter>
+        <Parameter Name="@ProductTreeFicheID" Type="DevExpress.DataAccess.Expression">(System.Int32)(?ProductTreeFicheID)</Parameter>
+        <ProcName>spProcessUnitCost</ProcName>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="spProcessUnitCost">
+            <Field Name="MainStockCode" Type="String" />
+            <Field Name="StockFeatureTypeID" Type="Int32" />
+            <Field Name="GroupZoneID" Type="Int32" />
+            <Field Name="ProcessZoneID" Type="Int32" />
+            <Field Name="ZoneName" Type="String" />
+            <Field Name="MachineGroupID" Type="Int32" />
+            <Field Name="StockGroup" Type="String" />
+            <Field Name="StockGroupID" Type="Int32" />
+            <Field Name="LevelType" Type="Int32" />
+            <Field Name="FinalAmount" Type="Decimal" />
+            <Field Name="Level" Type="Int32" />
+            <Field Name="ParentID" Type="Int32" />
+            <Field Name="DyeProcess" Type="Int32" />
+            <Field Name="StockGroupCount" Type="Int32" />
+            <Field Name="Process" Type="String" />
+            <Field Name="ProcessID" Type="Int32" />
+            <Field Name="ProcessCount" Type="Int32" />
+            <Field Name="CalculatedWorkerCount" Type="Int32" />
+            <Field Name="PeriodCount" Type="Decimal" />
+            <Field Name="Wastage" Type="Decimal" />
+            <Field Name="AvgCapacity" Type="Decimal" />
+            <Field Name="FullCapacity" Type="Decimal" />
+            <Field Name="TotalMachineCount" Type="Int32" />
+            <Field Name="CalculatedMachineCount" Type="Int32" />
+            <Field Name="WorkerExpenses" Type="Decimal" />
+            <Field Name="TotalDirectExpenses" Type="Decimal" />
+            <Field Name="DirectExpenses" Type="Decimal" />
+            <Field Name="TotalZoneExpenses" Type="Decimal" />
+            <Field Name="ZoneExpenses" Type="Decimal" />
+            <Field Name="TotalIndirectExpenses" Type="Decimal" />
+            <Field Name="IndirectExpenses" Type="Decimal" />
+            <Field Name="DyeChemicalCost" Type="Decimal" />
+            <Field Name="DGZ" Type="Decimal" />
+            <Field Name="ELK" Type="Decimal" />
+            <Field Name="SU" Type="Decimal" />
+            <Field Name="StockGroupCost" Type="Decimal" />
+            <Field Name="SARFG" Type="Decimal" />
+            <Field Name="SABTG" Type="Decimal" />
+            <Field Name="BKMG" Type="Decimal" />
+            <Field Name="IBKMG" Type="Decimal" />
+            <Field Name="AMRTG" Type="Decimal" />
+            <Field Name="IAMRTG" Type="Decimal" />
+            <Field Name="FNSG" Type="Decimal" />
+            <Field Name="INDRG" Type="Decimal" />
+            <Field Name="DGRG" Type="Decimal" />
+            <Field Name="DailyGroupBottleNeck" Type="Decimal" />
+            <Field Name="MonthlyGroupBottleNeck" Type="Decimal" />
+            <Field Name="DailyProductBottleNeck" Type="Decimal" />
+            <Field Name="MonthlyProductBottleNeck" Type="Decimal" />
+            <Field Name="ShiftCount" Type="Decimal" />
+            <Field Name="ShiftHour" Type="Decimal" />
+            <Field Name="ShiftDay" Type="Decimal" />
+            <Field Name="PersonelHour" Type="Decimal" />
+            <Field Name="PersonelDay" Type="Decimal" />
+            <Field Name="RawMaterialPrice" Type="Decimal" />
+            <Field Name="ProductionUnitCost" Type="Decimal" />
+            <Field Name="FinalProductionUnitCost" Type="Decimal" />
+            <Field Name="FixCost" Type="Double" />
+            <Field Name="UnitCost" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Today" Expression="Today()" DataType="Auto" DataMember="VW_STOCK" />
+        <CalculatedField Name="Hesaplanan alan 1" Expression="[TotalIndirectExpenses]/[ProcessCount]/[MonthlyProductBottleNeck]" DataType="Auto" DataMember="spProcessUnitCost" />
+        <CalculatedField Name="Kapasite_Yüzde" Expression="[DailyProductBottleNeck]*[FinalAmount]/100 / ([FullCapacity])" DataType="Auto" DataMember="spProcessUnitCost" />
+        <CalculatedField Name="Hesaplanan alan 2" Expression="[ColumnName]='PaymentDate'" DataType="Auto" DataMember="tblParameter_PaymentDate" />
+        <CalculatedField Name="Uretim_Iscilik" Expression="[ZoneExpenses]+[DirectExpenses]" DataType="Auto" DataMember="spProcessUnitCost" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <TabContainer ComponentName="tabContainerDashboardItem1" Name="Tab Container 1">
+      <Pages>
+        <Page ComponentName="dashboardTabPage3" Name="Kapasite Bilgileri" />
+      </Pages>
+    </TabContainer>
+    <Grid ComponentName="gridDashboardItem3" Name="Kılavuz 2" ParentContainer="dashboardTabPage3" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Dimension DataMember="StockGroup" DefaultId="DataItem0" />
+        <Dimension DataMember="Process" DefaultId="DataItem1" />
+        <Dimension DataMember="AvgCapacity" Name="Kapasite (Kg)" DefaultId="DataItem2">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="FullCapacity" Name="Full Kapasite (Kg)" DefaultId="DataItem5">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="DailyProductBottleNeck" Name="Dar Boğaz (Kg)" DefaultId="DataItem6">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Measure DataMember="FullCapacity" Name="Kapasite Level" DefaultId="DataItem9">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="DailyGroupBottleNeck" Name="Grup Dar Boğaz (Kg)" DefaultId="DataItem7">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Measure DataMember="Kapasite_Yüzde" Name="Kapasite Yüzde" DefaultId="DataItem3">
+          <NumericFormat FormatType="Percent" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="FinalAmount" Name="Yüzde(%)" DefaultId="DataItem4">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionAverage AverageType="Below">
+            <AppearanceSettings AppearanceType="PaleYellow" />
+          </FormatConditionAverage>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 2" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionAverage AverageType="AboveOrEqual">
+            <AppearanceSettings AppearanceType="PalePurple" />
+          </FormatConditionAverage>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 3" DataItemApplyTo="DataItem6">
+          <FormatConditionExpression Expression="[DataItem6] Is Not Null">
+            <AppearanceSettings AppearanceType="PaleOrange" />
+          </FormatConditionExpression>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 4" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="RatingEmptyGrayStar" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="33" />
+                  <IconSettings IconType="RatingHalfGrayStar" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="67" />
+                  <IconSettings IconType="RatingFullGrayStar" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 5" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="Rating0FilledBoxes" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                  <IconSettings IconType="Rating1FilledBox" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                  <IconSettings IconType="Rating2FilledBoxes" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                  <IconSettings IconType="Rating3FilledBoxes" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                  <IconSettings IconType="Rating4FilledBoxes" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 6" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="Rating0Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                  <IconSettings IconType="Rating1Bar" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                  <IconSettings IconType="Rating2Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                  <IconSettings IconType="Rating3Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                  <IconSettings IconType="Rating4Bars" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 7" DataItem="DataItem2" DataItemApplyTo="DataItem2">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="Rating0Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                  <IconSettings IconType="Rating1Bar" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                  <IconSettings IconType="Rating2Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                  <IconSettings IconType="Rating3Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                  <IconSettings IconType="Rating4Bars" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="92.7654699150045">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="88.90024200187932">
+          <Dimension DefaultId="DataItem7" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="43.2905526270021">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="96.630697828129684">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="71.120193601503459">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="81.942831758253973">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="75.758467097253671">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Weight="74.21237593200361" DisplayMode="Bar">
+          <Measure DefaultId="DataItem9" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Weight="77.304558262503747">
+          <Measure DefaultId="DataItem3" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions AllowGridCellMerge="true" ColumnWidthMode="Manual" />
+    </Grid>
+    <ComboBox ComponentName="comboBoxDashboardItem5" Name="Proses Grubuna Göre Filtre" ParentContainer="dashboardTabPage3" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost" EnableSearch="true" ComboBoxType="Checked">
+      <DataItems>
+        <Dimension DataMember="StockGroup" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+    <ComboBox ComponentName="comboBoxDashboardItem6" Name="İşletme Tipine Göre Filtre" ParentContainer="dashboardTabPage3" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost" EnableSearch="true" ComboBoxType="Checked">
+      <DataItems>
+        <Dimension DataMember="ZoneName" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+    <Chart ComponentName="chartDashboardItem4" Name="Kapasite Grafiği" ParentContainer="dashboardTabPage3" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <ColoringOptions UseGlobalColors="false" />
+      <DataItems>
+        <Dimension DataMember="Process" DefaultId="DataItem0" />
+        <Measure DataMember="AvgCapacity" Name="Kapasite (Kg)" DefaultId="DataItem1">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="FullCapacity" Name="Full Kapasite (Kg)" DefaultId="DataItem2" />
+        <Measure DataMember="DailyProductBottleNeck" Name="Dar Boğaz (Kg)" DefaultId="DataItem3" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Bölme 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem1" />
+            </Simple>
+            <Simple>
+              <Value DefaultId="DataItem2" />
+            </Simple>
+            <Simple>
+              <Value DefaultId="DataItem3" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Gauge ComponentName="gaugeDashboardItem3" Name="Ölçü aygıtları 1" ShowCaption="false" ParentContainer="dashboardTabPage3" DataSource="dashboardSqlDataSource1" DataMember="spProcessUnitCost">
+      <DataItems>
+        <Measure DataMember="MonthlyProductBottleNeck" Name="Aylık Kapasite (Kg)" SummaryType="Average" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <GaugeElement Maximum="450000">
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat IncludeGroupSeparator="true" />
+        <ScaleLabelNumericFormat Precision="0" Unit="Ones" />
+      </GaugeElement>
+    </Gauge>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutTabContainer DashboardItem="tabContainerDashboardItem1" Weight="100">
+        <LayoutTabPage Orientation="Vertical" DashboardItem="dashboardTabPage3" Weight="100">
+          <LayoutGroup Weight="42.650918635170605">
+            <LayoutGroup Orientation="Vertical" Weight="58.768406961178044">
+              <LayoutGroup Weight="19.076923076923077">
+                <LayoutItem DashboardItem="comboBoxDashboardItem6" Weight="44.305239179954441" />
+                <LayoutItem DashboardItem="comboBoxDashboardItem5" Weight="55.694760820045559" />
+              </LayoutGroup>
+              <LayoutItem DashboardItem="gridDashboardItem3" Weight="80.92307692307692" />
+            </LayoutGroup>
+            <LayoutItem DashboardItem="gaugeDashboardItem3" Weight="41.231593038821956" />
+          </LayoutGroup>
+          <LayoutItem DashboardItem="chartDashboardItem4" Weight="57.349081364829395" />
+        </LayoutTabPage>
+      </LayoutTabContainer>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

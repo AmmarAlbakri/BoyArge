@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="tr-TR">
+  <Title Text="Kontrol paneli" />
+  <Items>
+    <Card ComponentName="cardDashboardItem1" Name="Kartlar 1" DataMember="DVZHAR">
+      <DataItems>
+        <Dimension DataMember="DOVIZTARIH" DefaultId="DataItem0" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem0" />
+      </SeriesDimensions>
+    </Card>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutItem DashboardItem="cardDashboardItem1" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="dbArgeDataSet" targetNamespace="http://tempuri.org/dbArgeDataSet.xsd"
+           xmlns:mstns="http://tempuri.org/dbArgeDataSet.xsd" xmlns="http://tempuri.org/dbArgeDataSet.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified"
+           elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter"
+                  Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema"
+                  xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=192.168.109.2,1433;Initial Catalog=dbArge;User ID=arge"
+                      IsAppSettingsProperty="false" Modifier="Assembly" Name="cpm.dbArge.dbo1" ParameterPrefix="@"
+                      Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component"
+                        DataAccessorModifier="AutoLayout, AnsiClass, Class, Public"
+                        DataAccessorName="vwDocumentTableAdapter"
+                        GeneratorDataComponentClassName="vwDocumentTableAdapter" Name="vwDocument"
+                        UserDataComponentName="vwDocumentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cpm.dbArge.dbo1" DbObjectName="dbArge.dbo.vwDocument" DbObjectType="View"
+                        FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both"
+                        GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill"
+                        GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DocumentID, Module, Name, Type, Date, Status, RowGUID FROM dbo.vwDocument</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DocumentID" DataSetColumn="DocumentID" />
+              <Mapping SourceColumn="Module" DataSetColumn="Module" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="RowGUID" DataSetColumn="RowGUID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dbArgeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true"
+              msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbArgeDataSet"
+              msprop:Generator_UserDSName="dbArgeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwDocument" msprop:Generator_TableClassName="vwDocumentDataTable"
+                    msprop:Generator_TableVarName="tablevwDocument" msprop:Generator_TablePropName="vwDocument"
+                    msprop:Generator_RowDeletingName="vwDocumentRowDeleting"
+                    msprop:Generator_RowChangingName="vwDocumentRowChanging"
+                    msprop:Generator_RowEvHandlerName="vwDocumentRowChangeEventHandler"
+                    msprop:Generator_RowDeletedName="vwDocumentRowDeleted" msprop:Generator_UserTableName="vwDocument"
+                    msprop:Generator_RowChangedName="vwDocumentRowChanged"
+                    msprop:Generator_RowEvArgName="vwDocumentRowChangeEvent"
+                    msprop:Generator_RowClassName="vwDocumentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DocumentID" msprop:Generator_ColumnVarNameInTable="columnDocumentID"
+                          msprop:Generator_ColumnPropNameInRow="DocumentID"
+                          msprop:Generator_ColumnPropNameInTable="DocumentIDColumn"
+                          msprop:Generator_UserColumnName="DocumentID" type="xs:int" />
+              <xs:element name="Module" msprop:Generator_ColumnVarNameInTable="columnModule"
+                          msprop:Generator_ColumnPropNameInRow="Module"
+                          msprop:Generator_ColumnPropNameInTable="ModuleColumn"
+                          msprop:Generator_UserColumnName="Module" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName"
+                          msprop:Generator_ColumnPropNameInRow="Name"
+                          msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name"
+                          minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType"
+                          msprop:Generator_ColumnPropNameInRow="Type"
+                          msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type"
+                          minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate"
+                          msprop:Generator_ColumnPropNameInRow="Date"
+                          msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date"
+                          type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus"
+                          msprop:Generator_ColumnPropNameInRow="Status"
+                          msprop:Generator_ColumnPropNameInTable="StatusColumn"
+                          msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RowGUID"
+                          msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                          msprop:Generator_ColumnVarNameInTable="columnRowGUID"
+                          msprop:Generator_ColumnPropNameInRow="RowGUID"
+                          msprop:Generator_ColumnPropNameInTable="RowGUIDColumn"
+                          msprop:Generator_UserColumnName="RowGUID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vwDocument" />
+      <xs:field xpath="mstns:DocumentID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

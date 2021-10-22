@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Sum_Orders" targetNamespace="http://tempuri.org/Sum_Orders.xsd" xmlns:mstns="http://tempuri.org/Sum_Orders.xsd" xmlns="http://tempuri.org/Sum_Orders.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Order" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Order (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BoyArge.Properties.Settings.GlobalReference.Default.Order" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWARGE_ORDER_CURRENTTableAdapter" GeneratorDataComponentClassName="VWARGE_ORDER_CURRENTTableAdapter" Name="VWARGE_ORDER_CURRENT" UserDataComponentName="VWARGE_ORDER_CURRENTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_Isletme" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillBy_Isletme" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillBy_Isletme">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+[Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+(select SUM([Kalan Miktar]) from VWARGE_ORDER_CURRENT where [Üretim Durumu]='Açık') AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+where [Sipariş Türü]&lt;&gt;'10.Ön Sipariş'
+GROUP BY [Üretim Yeri]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Sipariş_Miktarı" DataSetColumn="Sipariş_Miktarı" />
+              <Mapping SourceColumn="Üretim_Miktarı" DataSetColumn="Üretim_Miktarı" />
+              <Mapping SourceColumn="Stok_Miktarı" DataSetColumn="Stok_Miktarı" />
+              <Mapping SourceColumn="Üretim Yeri" DataSetColumn="Üretim Yeri" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_Boyama" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData3" GeneratorSourceName="FillBy_Boyama" GetMethodModifier="Public" GetMethodName="GetData3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData3" UserSourceName="FillBy_Boyama">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+[Boyama Şekli]  [Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+(select SUM([Kalan Miktar]) from VWARGE_ORDER_CURRENT where [Üretim Durumu]='Açık') AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+where [Sipariş Türü]&lt;&gt;'10.Ön Sipariş'
+GROUP BY  [Boyama Şekli] </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_Kalite" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData4" GeneratorSourceName="FillBy_Kalite" GetMethodModifier="Public" GetMethodName="GetData4" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData4" UserSourceName="FillBy_Kalite">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+[Malzeme Adı] [Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+(select SUM([Kalan Miktar]) from VWARGE_ORDER_CURRENT where [Üretim Durumu]='Açık') AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+where [Sipariş Türü]&lt;&gt;'10.Ön Sipariş'
+GROUP BY [Malzeme Adı]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_Musteri" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData5" GeneratorSourceName="FillBy_Musteri" GetMethodModifier="Public" GetMethodName="GetData5" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData5" UserSourceName="FillBy_Musteri">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+
+SELECT
+[Müşteri Kısa Ad] [Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+(select SUM([Kalan Miktar]) from VWARGE_ORDER_CURRENT where [Üretim Durumu]='Açık') AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+where [Sipariş Türü]&lt;&gt;'10.Ön Sipariş'
+GROUP BY  [Müşteri Kısa Ad]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_Renk" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData6" GeneratorSourceName="FillBy_Renk" GetMethodModifier="Public" GetMethodName="GetData6" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData6" UserSourceName="FillBy_Renk">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+[Renk Kodu]  [Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+(select SUM([Kalan Miktar]) from VWARGE_ORDER_CURRENT where [Üretim Durumu]='Açık') AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+where [Sipariş Türü]&lt;&gt;'10.Ön Sipariş'
+GROUP BY  [Renk Kodu] </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_Siparis_Tip" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData1" GeneratorSourceName="FillBy_Siparis_Tip" GetMethodModifier="Public" GetMethodName="GetData1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData1" UserSourceName="FillBy_Siparis_Tip">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+[Sipariş Tipi]  [Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+(select SUM([Kalan Miktar]) from VWARGE_ORDER_CURRENT where [Üretim Durumu]='Açık') AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+where [Sipariş Türü]&lt;&gt;'10.Ön Sipariş'
+GROUP BY [Sipariş Tipi] </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Order (Settings)" DbObjectName="TEKSTIL_UYG.dbo.VWARGE_ORDER_CURRENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_SiparisTuru" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData2" GeneratorSourceName="FillBy_SiparisTuru" GetMethodModifier="Public" GetMethodName="GetData2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData2" UserSourceName="FillBy_SiparisTuru">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+[Sipariş Türü]  [Üretim Yeri],
+SUM([Kalan Miktar]) AS Sipariş_Miktarı,
+0 AS Üretim_Miktarı,
+SUM([Stok Miktar]) AS Stok_Miktarı
+FROM
+VWARGE_ORDER_CURRENT
+GROUP BY [Sipariş Türü] </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Sum_Orders" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Sum_Orders" msprop:Generator_UserDSName="Sum_Orders">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VWARGE_ORDER_CURRENT" msprop:Generator_TableClassName="VWARGE_ORDER_CURRENTDataTable" msprop:Generator_TableVarName="tableVWARGE_ORDER_CURRENT" msprop:Generator_RowChangedName="VWARGE_ORDER_CURRENTRowChanged" msprop:Generator_TablePropName="VWARGE_ORDER_CURRENT" msprop:Generator_RowDeletingName="VWARGE_ORDER_CURRENTRowDeleting" msprop:Generator_RowChangingName="VWARGE_ORDER_CURRENTRowChanging" msprop:Generator_RowEvHandlerName="VWARGE_ORDER_CURRENTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWARGE_ORDER_CURRENTRowDeleted" msprop:Generator_RowClassName="VWARGE_ORDER_CURRENTRow" msprop:Generator_UserTableName="VWARGE_ORDER_CURRENT" msprop:Generator_RowEvArgName="VWARGE_ORDER_CURRENTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sipariş_Miktarı" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSipariş_Miktarı" msprop:Generator_ColumnPropNameInRow="Sipariş_Miktarı" msprop:Generator_ColumnPropNameInTable="Sipariş_MiktarıColumn" msprop:Generator_UserColumnName="Sipariş_Miktarı" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Üretim_Miktarı" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnÜretim_Miktarı" msprop:Generator_ColumnPropNameInRow="Üretim_Miktarı" msprop:Generator_ColumnPropNameInTable="Üretim_MiktarıColumn" msprop:Generator_UserColumnName="Üretim_Miktarı" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Stok_Miktarı" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStok_Miktarı" msprop:Generator_ColumnPropNameInRow="Stok_Miktarı" msprop:Generator_ColumnPropNameInTable="Stok_MiktarıColumn" msprop:Generator_UserColumnName="Stok_Miktarı" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Üretim_x0020_Yeri" msprop:Generator_ColumnVarNameInTable="columnÜretim_Yeri" msprop:Generator_ColumnPropNameInRow="Üretim_Yeri" msprop:Generator_ColumnPropNameInTable="Üretim_YeriColumn" msprop:Generator_UserColumnName="Üretim Yeri" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

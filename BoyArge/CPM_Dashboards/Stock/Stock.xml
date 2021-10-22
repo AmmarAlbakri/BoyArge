@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="tr-TR">
+  <Title Text="Kontrol paneli" />
+  <DataSources>
+    <SqlDataSource Name="SQL veri kaynağı 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="dbArgeConnectionString" ProviderKey="MSSqlServer" FromAppConfig="true">
+      </Connection>
+      <Query Type="SelectQuery" Name="VW_STOCK">
+        <Tables>
+          <Table Name="VW_STOCK" X="-150" Y="20" Width="125" Height="722" />
+        </Tables>
+        <Columns>
+          <Column Table="VW_STOCK" Name="StockCode" />
+          <Column Table="VW_STOCK" Name="Mal Kodu" />
+          <Column Table="VW_STOCK" Name="Mal Adı" />
+          <Column Table="VW_STOCK" Name="Açıklama-1" />
+          <Column Table="VW_STOCK" Name="Açıklama-2" />
+          <Column Table="VW_STOCK" Name="Ürün Tanımı-2" />
+          <Column Table="VW_STOCK" Name="Grup Kodu" />
+          <Column Table="VW_STOCK" Name="Özel Kod" />
+          <Column Table="VW_STOCK" Name="Ürün Tanımı" />
+          <Column Table="VW_STOCK" Name="Mal Kodu-2" />
+          <Column Table="VW_STOCK" Name="İplik Katı" />
+          <Column Table="VW_STOCK" Name="İplik Ölçü Birimi" />
+          <Column Table="VW_STOCK" Name="İplik Özelliği" />
+          <Column Table="VW_STOCK" Name="İplik Görünüm" />
+          <Column Table="VW_STOCK" Name="İplik Efekt+Özellik" />
+          <Column Table="VW_STOCK" Name="İplik Tip-1-geçici" />
+          <Column Table="VW_STOCK" Name="İplik Tip-1" />
+          <Column Table="VW_STOCK" Name="İplik Tip-2" />
+          <Column Table="VW_STOCK" Name="İplik Numarası" />
+          <Column Table="VW_STOCK" Name="Karışım Oranları" />
+          <Column Table="VW_STOCK" Name="Karışım Tipleri" />
+          <Column Table="VW_STOCK" Name="Elyaf Kod-1" />
+          <Column Table="VW_STOCK" Name="Elyaf Kod-2" />
+          <Column Table="VW_STOCK" Name="Elyaf Tanım-1" />
+          <Column Table="VW_STOCK" Name="Elyaf Tanım-2" />
+          <Column Table="VW_STOCK" Name="Elyaf Özellik-1" />
+          <Column Table="VW_STOCK" Name="Elyaf Özellik-2" />
+          <Column Table="VW_STOCK" Name="RingBobinNr" />
+          <Column Table="VW_STOCK" Name="BukumNr" />
+          <Column Table="VW_STOCK" Name="FinalNr" />
+          <Column Table="VW_STOCK" Name="Birim" />
+          <Column Table="VW_STOCK" Name="Bölüm" />
+          <Column Table="VW_STOCK" Name="Grup" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL veri kaynağı 1">
+          <View Name="VW_STOCK">
+            <Field Name="StockCode" Type="String" />
+            <Field Name="Mal Kodu" Type="String" />
+            <Field Name="Mal Adı" Type="String" />
+            <Field Name="Açıklama-1" Type="String" />
+            <Field Name="Açıklama-2" Type="String" />
+            <Field Name="Ürün Tanımı-2" Type="String" />
+            <Field Name="Grup Kodu" Type="String" />
+            <Field Name="Özel Kod" Type="String" />
+            <Field Name="Ürün Tanımı" Type="String" />
+            <Field Name="Mal Kodu-2" Type="String" />
+            <Field Name="İplik Katı" Type="String" />
+            <Field Name="İplik Ölçü Birimi" Type="String" />
+            <Field Name="İplik Özelliği" Type="String" />
+            <Field Name="İplik Görünüm" Type="String" />
+            <Field Name="İplik Efekt+Özellik" Type="String" />
+            <Field Name="İplik Tip-1-geçici" Type="String" />
+            <Field Name="İplik Tip-1" Type="String" />
+            <Field Name="İplik Tip-2" Type="String" />
+            <Field Name="İplik Numarası" Type="Double" />
+            <Field Name="Karışım Oranları" Type="String" />
+            <Field Name="Karışım Tipleri" Type="String" />
+            <Field Name="Elyaf Kod-1" Type="String" />
+            <Field Name="Elyaf Kod-2" Type="String" />
+            <Field Name="Elyaf Tanım-1" Type="String" />
+            <Field Name="Elyaf Tanım-2" Type="String" />
+            <Field Name="Elyaf Özellik-1" Type="String" />
+            <Field Name="Elyaf Özellik-2" Type="String" />
+            <Field Name="RingBobinNr" Type="Decimal" />
+            <Field Name="BukumNr" Type="Decimal" />
+            <Field Name="FinalNr" Type="Decimal" />
+            <Field Name="Birim" Type="String" />
+            <Field Name="Bölüm" Type="String" />
+            <Field Name="Grup" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="StokCode" Expression="Substring([StockCode], 0,3)" DataType="Auto" DataMember="VW_STOCK" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="Stok_Type" AllowMultiselect="true" Description="Stok Türü">
+      <Values>
+        <Value>01.İplik</Value>
+      </Values>
+      <DynamicListLookUpSettings DataSourceName="dashboardSqlDataSource1" DataMember="VW_STOCK" ValueMember="Grup Kodu" />
+    </Parameter>
+  </Parameters>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Kılavuz 1" DataSource="dashboardSqlDataSource1" DataMember="VW_STOCK" FilterString="[DataItem11] In (?Stok_Type)">
+      <DataItems>
+        <Dimension DataMember="StockCode" DefaultId="DataItem0" />
+        <Dimension DataMember="İplik Efekt+Özellik" DefaultId="DataItem1" />
+        <Dimension DataMember="Mal Adı" DefaultId="DataItem5" />
+        <Dimension DataMember="İplik Ölçü Birimi" Name="İplik No" DefaultId="DataItem4" />
+        <Dimension DataMember="Karışım Oranları" DefaultId="DataItem6" />
+        <Dimension DataMember="İplik Görünüm" DefaultId="DataItem2" />
+        <Dimension DataMember="İplik Katı" DefaultId="DataItem3" />
+        <Dimension DataMember="Bölüm" DefaultId="DataItem7" />
+        <Dimension DataMember="Grup" DefaultId="DataItem8" />
+        <Dimension DataMember="İplik Numarası" DefaultId="DataItem9" />
+        <Dimension DataMember="İplik Tip-1" DefaultId="DataItem10" />
+        <Dimension DataMember="Grup Kodu" DefaultId="DataItem11" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem11" />
+      </HiddenDimensions>
+      <GridColumns>
+        <GridDimensionColumn Weight="59.435862995298855">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="47.850906648757558">
+          <Dimension DefaultId="DataItem7" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="46.843519140362659">
+          <Dimension DefaultId="DataItem8" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="51.376762928139691">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="45.332437877770317">
+          <Dimension DefaultId="DataItem9" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="75.554063129617191">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="117.86433848220283">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="162.69308260577569">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem10" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="66.487575554063127">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="76.56145063801209">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <ListBox ComponentName="listBoxDashboardItem3" Name="Liste kutusu 3" DataSource="dashboardSqlDataSource1" DataMember="VW_STOCK" ShowAllValue="false">
+      <DataItems>
+        <Dimension DataMember="İplik Efekt+Özellik" SortOrder="Descending" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem2" Name="Liste kutusu 2" DataSource="dashboardSqlDataSource1" DataMember="VW_STOCK">
+      <DataItems>
+        <Dimension DataMember="Bölüm" SortOrder="Descending" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Liste kutusu 1" DataSource="dashboardSqlDataSource1" DataMember="VW_STOCK">
+      <DataItems>
+        <Dimension DataMember="Grup" SortOrder="Descending" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem4" Name="Liste kutusu 3" DataSource="dashboardSqlDataSource1" DataMember="VW_STOCK" ShowAllValue="false">
+      <DataItems>
+        <Dimension DataMember="İplik Özelliği" SortOrder="Descending" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutGroup Weight="15.300546448087431">
+        <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="25" />
+        <LayoutItem DashboardItem="listBoxDashboardItem2" Weight="26.923076923076923" />
+        <LayoutItem DashboardItem="listBoxDashboardItem3" Weight="27.453580901856764" />
+        <LayoutItem DashboardItem="listBoxDashboardItem4" Weight="20.623342175066313" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="84.699453551912569" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

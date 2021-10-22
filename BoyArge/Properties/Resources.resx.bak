@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="next4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next4.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="changestatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changestatus.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="EditFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_audit_changehistory4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_audit_changehistory4.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coin.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="managedatasource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managedatasource.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_document" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_document.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpdateCaption" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="managequeries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managequeries.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="charttype_bubble3d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charttype_bubble3d.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="setdetaillevel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setdetaillevel.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="updatedataextract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\updatedataextract1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="dollar-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dollar-sign.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="EmptySpaceWarning" xml:space="preserve">
+    <value>Boş alan bırakılamaz</value>
+  </data>
+  <data name="QuestionDelete" xml:space="preserve">
+    <value>Kaydı silmek istiyor musunuz?</value>
+  </data>
+  <data name="categorize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categorize.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="alignhorizontaltop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alignhorizontaltop.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="next1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="firm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\firm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dollar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dollar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bo_organization" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_organization.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="connector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\connector.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="viewonweb_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viewonweb_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cut.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="SaveCaption" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="redwhitegreencolorscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\redwhitegreencolorscale.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="viewmergeddata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viewmergeddata.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="expense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="palette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\palette.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="redwhitegreencolorscale1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\redwhitegreencolorscale1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="add_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editdatasource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editdatasource.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="newtablestyle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newtablestyle.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="chartpoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chartpoint.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="linenumbering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\linenumbering.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="listsource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listsource.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="figures4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\figures4.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="euro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\euro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setfooterrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setfooterrange.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="addparameter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addparameter.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_statemachine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_statemachine.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="charttype_spline3d1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charttype_spline3d1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="pound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pound.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="enablesearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enablesearch.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="pivottablegroupselection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pivottablegroupselection.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="brain 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brain 64x64.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="time1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="business_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\business_money.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="next2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="alignverticalright" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alignverticalright.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="chartopenhighlowclosestock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chartopenhighlowclosestock.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forward.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shortdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shortdate.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_audit_changehistory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_audit_changehistory.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="QuestionExit" xml:space="preserve">
+    <value>Çıkış yapmak istiyor musunuz?</value>
+  </data>
+  <data name="insertlistbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\insertlistbox.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="gaugestylerightquartercircular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gaugestylerightquartercircular.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="arge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuestionPassive" xml:space="preserve">
+    <value>Kaydı devre dışı bırakmak istiyor musunuz ?</value>
+  </data>
+  <data name="AdminWarning" xml:space="preserve">
+    <value>Yöneticinize Başvurun!</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>Bağlantı başarısız!</value>
+  </data>
+  <data name="QuestionUpdate" xml:space="preserve">
+    <value>Kaydı güncellemek istiyor musunuz ?</value>
+  </data>
+  <data name="binary-tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\binary-tree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bo_appearance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_appearance.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="time2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="singlepageview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\singlepageview.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="stackedarea_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stackedarea_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="setdetailrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setdetailrange.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="properties_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\properties_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_validation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_validation.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="innovation_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\innovation_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="date&amp;time" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\date&amp;time.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="pieseries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pieseries.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_audit_changehistory1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_audit_changehistory1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_employee.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="lock_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExceptionMessage" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="enablesearch1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enablesearch1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bandedrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bandedrows.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="financial_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financial_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graph-Magnifier-icon 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graph-Magnifier-icon 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grouplabels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grouplabels.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="_unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="viewmergeddata1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viewmergeddata1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="InsertError" xml:space="preserve">
+    <value>Kayıt işlemi başarısız</value>
+  </data>
+  <data name="innovation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\innovation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preview1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_user.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="TR 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TR 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expenses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expenses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chartgridlinesvertical_minor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chartgridlinesvertical_minor.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>Erişim</value>
+  </data>
+  <data name="inserttreeview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inserttreeview.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="checkbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkbox.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="singlepageview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\singlepageview1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="businessman_magnifier 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\businessman_magnifier 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="showcaption" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\showcaption.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="yellowgreencolorscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellowgreencolorscale.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Kullanıcı Adı ya da Parola bilgisi yanlış!</value>
+  </data>
+  <data name="next3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next3.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="currency1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currency1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="calculatenow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calculatenow.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="open2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="QuestionSave" xml:space="preserve">
+    <value>Bilgileri kaydetmek istiyor musunuz ?</value>
+  </data>
+  <data name="chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chart.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="financial_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financial_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="businessman_magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\businessman_magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SqlException" xml:space="preserve">
+    <value>Veritabanı Uyarısı</value>
+  </data>
+  <data name="stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="managequeries2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managequeries2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="barcodeshowtext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcodeshowtext.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="alignhorizontalcenter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alignhorizontalcenter.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="_checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alignhorizontalbottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alignhorizontalbottom.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="charttype_line1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charttype_line1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_audit_changehistory2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_audit_changehistory2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="arge_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arge-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InsertInfo" xml:space="preserve">
+    <value>Kayıt işlemi başarılı</value>
+  </data>
+  <data name="AllRecords" xml:space="preserve">
+    <value>Tüm Kayıtlar</value>
+  </data>
+  <data name="morecolors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\morecolors.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="managequeries3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managequeries3.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="boiler_ 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boiler_ 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modifytablestyle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modifytablestyle.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Oturum Açılamadı!</value>
+  </data>
+  <data name="DeleteError" xml:space="preserve">
+    <value>Kayıt silme işlemi başarısız</value>
+  </data>
+  <data name="zone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zone.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="palette1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\palette1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="verticallines" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\verticallines.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="PopupMenuShowing_Passive" xml:space="preserve">
+    <value>Kaydı Devre dışı bırak</value>
+  </data>
+  <data name="charttype_spline3d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charttype_spline3d.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="find1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="updatedataextract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\updatedataextract.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="errorbarswithpercentage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\errorbarswithpercentage.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="exporttoxml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exporttoxml.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="dashboarddesigner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboarddesigner1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="managequeries1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managequeries1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="brush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brush.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="PopupMenuShowing_Active" xml:space="preserve">
+    <value>Kaydı Etkinleştir</value>
+  </data>
+  <data name="dashboarddesigner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboarddesigner.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="initialstate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\initialstate.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="charttype_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charttype_line.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="UpdateError" xml:space="preserve">
+    <value>Güncelleme işlemi başarısız</value>
+  </data>
+  <data name="UpdateInfo" xml:space="preserve">
+    <value>Güncelleme işlemi başarılı</value>
+  </data>
+  <data name="Graph-Magnifier-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graph-Magnifier-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listnumbers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listnumbers.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="gaugestylefullcircular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gaugestylefullcircular.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="recipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recipe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="recipe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recipe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="through_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\through_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="viewsettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viewsettings.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_order_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_order_item.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="private" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\private.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="calculatesheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calculatesheet.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="editrangepermission" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editrangepermission.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preview.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="open21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open21.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="appointmentnightclock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appointmentnightclock.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="categorize1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categorize1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="currency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currency.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_audit_changehistory3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_audit_changehistory3.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="turkish_lira" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turkish-lira.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doctor 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doctor 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textbox_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\textbox_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cpm_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cpm-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="time" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\time.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Düzenleme</value>
+  </data>
+  <data name="servermode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\servermode.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="QuestionActive" xml:space="preserve">
+    <value>Kaydı etkinleştirmek istiyor musunuz ?</value>
+  </data>
+  <data name="stackedarea_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stackedarea_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteInfo" xml:space="preserve">
+    <value>Kayıt silindi</value>
+  </data>
+  <data name="setheaderrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setheaderrange.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="OnlyActiveRecords" xml:space="preserve">
+    <value>Aktif Kayıtlar</value>
+  </data>
+  <data name="alignverticalleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alignverticalleft.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="PermissionDenied" xml:space="preserve">
+    <value>Düzenleme yetkiniz yoktur!</value>
+  </data>
+  <data name="DatabaseConnectionError" xml:space="preserve">
+    <value>Veritabanına bağlanılamıyor</value>
+  </data>
+  <data name="bo_validation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_validation1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+</root>
